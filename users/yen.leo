@@ -165,7 +165,10 @@
 <v t="amd.20160106093454.1" a="E"><vh>yen 所寫的網誌文章</vh>
 <v t="amd.20160727114506.1" a="E"><vh>201609</vh>
 <v t="amd.20160727120222.1"><vh>@edit 20160921.md</vh></v>
-<v t="leo.20161014142409.1"><vh>@edit 20161014.md</vh></v>
+<v t="leo.20161209141019.1"><vh>@edit2016/12/9</vh></v>
+<v t="leo.20161014142409.1"><vh>@edit 2016/12/9(1).md</vh></v>
+<v t="leo.20161209141113.1"><vh>@edit繪圖</vh></v>
+<v t="leo.20161209143354.1"><vh>newHeadline</vh></v>
 <v t="leo.20161024160947.1"><vh>@edit 20161024.md</vh></v>
 <v t="leo.20161031143324.1"><vh>@edit 20161031.md</vh></v>
 </v>
@@ -178,6 +181,7 @@
 </v>
 <v t="amd.20161004202833.1"><vh>@edit ../README.md</vh></v>
 <v t="yen.20161022111056.1"><vh>@button https server</vh></v>
+<v t="leo.20161209152701.1"><vh>@button ipv6 https server</vh></v>
 <v t="yen.20161022151749.1"><vh>產生 .key 與 .crt</vh></v>
 </vnodes>
 <tnodes>
@@ -475,6 +479,269 @@ PLUGINS = ['liquid_tags.notebook', 'summary']
 <t tx="leo.20151213230957.1"># 設定網誌以 md 檔案建立的 file system date 為準, 無需自行設定
 
 DEFAULT_DATE = 'fs'</t>
+<t tx="leo.20161014142409.1">@language md
+Title: 2016Fall 程式練習題
+Date: 2016-10-22 12:00
+Category: Misc
+Tags: 使用導引
+Author: yen
+
+已知截至第六週 2016fallcpa 的分組資料位於倉儲中的 &lt;a href="./../w6_group.txt"&gt;w6_group.txt&lt;/a&gt;, 而從學校修課系統下載的修課人員名條則為 &lt;a href="./../w6_list.txt"&gt;w6_list.txt&lt;/a&gt;, 請各組著手練習, 找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?
+
+&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+以下利用 Brython 讀取位於倉儲中的 &lt;a href="./../w6_list.txt"&gt;w6_list.txt&lt;/a&gt; 與 &lt;a href="./../w6_group.txt"&gt;w6_group.txt&lt;/a&gt; 資料檔案.
+
+表示學校教務系統中, 修 2016fallcpa 的學員名單為:
+
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;!-- 以下利用 Brython 程式執行檔案讀取與比對流程 --&gt;
+&lt;!-- 假如需要用圖型表示數字, 則利用 canvas 繪圖 --&gt;
+&lt;!-- &lt;canvas id="plotarea" width="600" height="400"&gt;&lt;/canvas&gt; --&gt;
+
+&lt;div id="container"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3" id="script1"&gt;
+from browser import document, html
+container = document['container']
+data = open("./../w6_list.txt").read()
+container &lt;= data
+&lt;/script&gt;
+
+&lt;br /&gt;
+&lt;br /&gt;
+
+而截至 w6, 納入分組名單中的學員有:
+
+&lt;div id="container2"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document, html
+container2 = document['container2']
+data2 = open("./../w6_group.txt").read()
+container2 &lt;= data2
+&lt;/script&gt;
+
+&lt;br /&gt;
+&lt;br /&gt;
+
+現在, 誰能夠幫我們找出至今尚未納入分組名單中的學員, 共有那些人？
+
+&lt;div id="container3"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document, html
+# 從 id=script1 程式區段取 data 變數
+from script1 import data
+container3 = document['container3']
+data3 = open("./../w6_group.txt").read()
+group = data3.splitlines()
+# 希望將分組資料轉為學員數列, 令為變數名稱 result_g
+result_g = []
+# 已經註冊者數列設為 registered
+registered = []
+for line in group:
+    # 去除每一行最後的空白成員
+    sline = line.split(",")
+    # 再將各組拆成個別組員後, 串成 result_g
+    for m in sline:
+        result_g.append(m)
+    #container3 &lt;= len(sline)
+    #container3 &lt;= html.BR()
+#container3 &lt;= len(result_g)
+registered = data.splitlines()[:-1]
+# 設法找出至今尚未分組的學員學號
+not_in_group = [c for c in registered if c not in result_g]
+#container3 &lt;= len(registered) -len(result_g)
+n = 1
+for i in not_in_group:
+    container3 &lt;= "第"+str(n)+"位: "+ str(i)
+    n = n + 1
+    container3 &lt;= html.BR()
+&lt;/script&gt;</t>
+<t tx="leo.20161209141019.1"></t>
+<t tx="leo.20161209141113.1">@language md
+Title: w13 Brython 繪圖範例
+Date: 2016-12-09 12:00
+Category: Misc
+Tags: Brython
+Author: 繪圖
+
+&lt;p&gt;有關 Brython html 模組的用法, 請參考 &lt;a href="http://www.brython.info/static_doc/en/html.html"&gt;http://www.brython.info/static_doc/en/html.html&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;計算機程式甲班成員連結:&lt;/p&gt;
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;!-- 以下利用 Brython 程式執行檔案讀取與比對流程 --&gt;
+
+&lt;!-- 假如需要用圖型表示數字, 則利用 canvas 繪圖 --&gt;
+
+&lt;!-- &lt;canvas id="plotarea" width="600" height="400"&gt;&lt;/canvas&gt; --&gt;
+
+&lt;p&gt;甲班學員投影片:&lt;/p&gt;
+&lt;div id="container1"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3" id="script1"&gt;
+from browser import document, html
+container1 = document['container1']
+adata = open("./../users/a.txt").read()
+alist = adata.splitlines()
+n = 0
+for stud_num in alist:
+    mlink = html.A(stud_num, href="http://s"+str(stud_num)+".github.io/2016fallcp_hw")
+    mlink += " | "
+    n = n +1
+    if n%8 == 0:
+        mlink += html.BR()
+    container1 &lt;= mlink
+&lt;/script&gt;</t>
+<t tx="leo.20161209143354.1">@color
+@language md
+
+Title: W12 Brython 繪圖範例
+Date: 2016-12-02 
+Category: Course
+Tags: Brython
+Author: yen
+
+&lt;p&gt;繪圖流程, 導入程式庫, 啟動, 然後引用各種模組開始繪圖&lt;/p&gt;
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
+&lt;canvas id="chord1" width="600" height="400"&gt;&lt;/canvas&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import math
+# 準備繪圖畫布
+canvas = doc["chord1"]
+ctx = canvas.getContext("2d")
+
+def background(x, y, xinc, yinc, xnum, ynum, ctx):
+    # 水平線
+    for i in range(ynum+1):
+        ctx.beginPath()
+    # 設定線的寬度為 1 個單位
+        if i == 0:
+            ctx.lineWidth = 7
+        else:
+            ctx.lineWidth = 1
+        ctx.moveTo(x-1, y+i*yinc)
+        ctx.lineTo(x+xnum*xinc+1, y+i*yinc)
+        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+        ctx.strokeStyle = "blue"
+        ctx.stroke()
+        ctx.closePath()
+    
+    # 垂直線
+    for i in range(xnum+1):
+        ctx.beginPath()
+    # 設定線的寬度為 1 個單位
+        ctx.lineWidth = 1
+        ctx.moveTo(x+i*xinc, y)
+        ctx.lineTo(x+i*xinc, y+ynum*yinc)
+        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+        ctx.strokeStyle = "blue"
+        ctx.stroke()
+        ctx.closePath()
+        
+def canvasText(x, y, fontSize, string, sup, sub, color, ctx):
+    # 標定各弦音符號, 以及把位編號
+    ctx.beginPath()
+    ctx.fillStyle = color
+    ctx.strokeStyle = color
+    #ctx.font = "20px Arial"
+    ctx.font = str(fontSize)+ "px Arial"
+    ctx.fillText(string, x, y)
+    ctx.font = str(fontSize-8)+ "px Arial"
+    if sup != "":
+        ctx.fillText(sup, x+fontSize/1.6, y-fontSize/2)
+    if sub != "":
+        ctx.fillText(sup, x+fontSize/1.6, y)
+    ctx.fill()
+    ctx.stroke()
+    ctx.closePath()
+
+w = 20
+h = 30
+background(100, 100, w, h, 5, 5, ctx)
+mylist = ["E", "A", "D", "G", "B", "E"]
+num = 0
+for s in mylist:
+    #canvasText(100,  80, 20, "A", "b", "", "black", ctx)
+    canvasText(100+num*w,  80, 20, s, "", "", "black", ctx)
+    num = num + 1
+&lt;/script&gt;
+
+
+
+
+
+
+
+
+</t>
+<t tx="leo.20161209152701.1">@language python
+import os
+import subprocess
+import threading
+import socket
+import http.server, ssl
+
+class HTTPServerV6(http.server.HTTPServer):
+    address_family = socket.AF_INET6
+  
+def domake():
+    # build directory
+    os.chdir("./../")
+    ipv6_address = '2001:288:6004:17:3004::808'
+    server_address = (ipv6_address, 6443)
+    #httpd = http.server.HTTPServer(server_address, http.server.SimpleHTTPRequestHandler)
+    httpd = HTTPServerV6(server_address, http.server.SimpleHTTPRequestHandler)
+    httpd.socket = ssl.wrap_socket(httpd.socket,
+                                   server_side=True,
+                                   certfile='localhost.crt',
+                                   keyfile='localhost.key',
+                                   ssl_version=ssl.PROTOCOL_TLSv1)
+    print("6443 https server started")
+    httpd.serve_forever()
+
+# 利用執行緒執行 https 伺服器
+make = threading.Thread(target=domake)
+make.start()</t>
 <t tx="yen.20161011114704.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 @others
