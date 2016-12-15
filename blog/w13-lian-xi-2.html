@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>W10 Brython 繪圖範例 - 2016Fall CPA 課程網誌 (虎尾科大MDE)</title>
+    <title>W13 練習-2 - 2016Fall CPA 課程網誌 (虎尾科大MDE)</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -166,21 +166,21 @@ init_mathjax = function() {
 init_mathjax();
 </script>
 
-<link rel="canonical" href="./w10-brython-hui-tu-fan-li.html">
+<link rel="canonical" href="./w13-lian-xi-2.html">
 
-        <meta name="author" content="yen" />
+        <meta name="author" content="楊永慶" />
         <meta name="keywords" content="Brython" />
-        <meta name="description" content="Brython繪圖 繪圖流程, 導入程式庫, 啟動, 然後引用各種模組開始繪圖 window.onload=function(){ brython(1); } from browser import document as doc import math canvas = doc[&#34;japanflag1&#34;] ctx = canvas.getContext(&#34;2d&#34;) ctx.beginPath() ctx.lineWidth = 1 inc = 5 for i ..." />
+        <meta name="description" content="將 http://mde.tw/2016fallcp/course/Python3Programs.txt 整理成brython 練習:編寫一個可以將適用者輸入的攝氏溫度,轉為華氏溫度" />
 
         <meta property="og:site_name" content="2016Fall CPA 課程網誌 (虎尾科大MDE)" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="W10 Brython 繪圖範例"/>
-        <meta property="og:url" content="./w10-brython-hui-tu-fan-li.html"/>
-        <meta property="og:description" content="Brython繪圖 繪圖流程, 導入程式庫, 啟動, 然後引用各種模組開始繪圖 window.onload=function(){ brython(1); } from browser import document as doc import math canvas = doc[&#34;japanflag1&#34;] ctx = canvas.getContext(&#34;2d&#34;) ctx.beginPath() ctx.lineWidth = 1 inc = 5 for i ..."/>
-        <meta property="article:published_time" content="2016-11-14" />
+        <meta property="og:title" content="W13 練習-2"/>
+        <meta property="og:url" content="./w13-lian-xi-2.html"/>
+        <meta property="og:description" content="將 http://mde.tw/2016fallcp/course/Python3Programs.txt 整理成brython 練習:編寫一個可以將適用者輸入的攝氏溫度,轉為華氏溫度"/>
+        <meta property="article:published_time" content="2016-12-10" />
             <meta property="article:section" content="Course" />
             <meta property="article:tag" content="Brython" />
-            <meta property="article:author" content="yen" />
+            <meta property="article:author" content="楊永慶" />
 
 
     <!-- Bootstrap -->
@@ -290,10 +290,10 @@ init_mathjax();
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="./w10-brython-hui-tu-fan-li.html"
+                    <a href="./w13-lian-xi-2.html"
                        rel="bookmark"
-                       title="Permalink to W10 Brython 繪圖範例">
-                        W10 Brython 繪圖範例
+                       title="Permalink to W13 練習-2">
+                        W13  練習-2
                     </a>
                 </h1>
             </header>
@@ -303,22 +303,22 @@ init_mathjax();
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-11-14T12:00:00+08:00"> 週一 14 十一月 2016</time>
+        <i class="fa fa-calendar"></i><time datetime="2016-12-10T12:00:00+08:00"> 週六 10 十二月 2016</time>
     </span>
             <span class="label label-default">By</span>
-            <a href="./author/yen.html"><i class="fa fa-user"></i> yen</a>
+            <a href="./author/yang-yong-qing.html"><i class="fa fa-user"></i> 楊永慶</a>
 
 
 
 <span class="label label-default">Tags</span>
 	<a href="./tag/brython.html">Brython</a>
-    <span class="label label-default">Lang</span>
-	<a href="./w10-brython-hui-tu-fan-li.html">en</a>
-
+    
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>Brython繪圖</p>
-<p>繪圖流程, 導入程式庫, 啟動, 然後引用各種模組開始繪圖</p>
+                <p>將<a herf="http://mde.tw/2016fallcp/course/Python3Programs.txt">
+http://mde.tw/2016fallcp/course/Python3Programs.txt</a> 整理成brython
+練習:編寫一個可以將適用者輸入的攝氏溫度,轉為華氏溫度</p>
+
 
 <!-- 導入 Brython 標準程式庫 -->
 
@@ -334,70 +334,25 @@ brython(1);
 }
 </script>
 
-<!-- 以下實際利用  Brython 畫兩條直線 -->
+<!-- 以下實際利用  Brython 畫圖 -->
 
-<canvas id="japanflag1" width="600" height="200"></canvas>
-
-<script type="text/python3">
-from browser import document as doc
-import math
-
-canvas = doc["japanflag1"]
-ctx = canvas.getContext("2d")
-ctx.beginPath()
-ctx.lineWidth = 1
-inc = 5
-for i in range(100):
-    ctx.moveTo(100+i*inc, 0)
-    ctx.lineTo(100+i*inc, 100)
-
-
-# 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-ctx.strokeStyle = "blue"
-ctx.stroke()
-ctx.closePath()
-</script>
-
-<p>以下為程式碼:</p>
-<pre class="brush:python">
-<!-- 導入 Brython 標準程式庫 -->
-
-<script type="text/javascript" 
-    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js">
-</script>
-
-<!-- 啟動 Brython -->
-
-<script>
-window.onload=function(){
-brython(1);
-}
-</script>
-
-<!-- 以下實際利用  Brython 畫兩條直線 -->
-
-<canvas id="japanflag1" width="600" height="200"></canvas>
+<div id="temperature"></div>
 
 <script type="text/python3">
 from browser import document as doc
-import math
-
-canvas = doc["japanflag1"]
-ctx = canvas.getContext("2d")
-ctx.beginPath()
-ctx.lineWidth = 1
-inc = 5
-for i in range(100):
-    ctx.moveTo(100+i*inc, 0)
-    ctx.lineTo(100+i*inc, 100)
-
-
-# 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-ctx.strokeStyle = "blue"
-ctx.stroke()
-ctx.closePath()
+from browser import html
+container = doc['temperature']
+mystring = ""
+cdegree = input("請輸入攝氏溫度:")
+fdegree = float(cdegree)*9/5+32
+output_string = "攝氏" +str(cdegree) + "度=華氏" +str(fdegree) + "度"
+container <= output_string
 </script>
-</pre>
+
+<p>開始進行範例分配</p>
+<p>接受使用者輸入</p>
+<p>利用aler()顯示結果</p>
+<p>直接列印結果</p>
             </div>
             <!-- /.entry-content -->
         </article>
