@@ -73,7 +73,7 @@ container &lt;= mystring
 &lt;p&gt;開始進行範例分配&lt;/p&gt;
 &lt;p&gt;接受使用者輸入&lt;/p&gt;
 &lt;p&gt;利用aler()顯示結果&lt;/p&gt;
-&lt;p&gt;直接列印結果&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>計算機程式 W14 範例整理</title><link href="./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html" rel="alternate"></link><published>2016-12-06T13:00:00+08:00</published><updated>2016-12-06T13:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-12-06:./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html</id><summary type="html">&lt;p&gt;本週的學習重點在導入 Leo Editor &lt;a href="http://leoeditor.com/tutorial-programming.html"&gt;@clean&lt;/a&gt; 節點指令的用法, 利用子節點管理各章節的範例, 逐一將程式改寫為 Brython 格式後, 直接在瀏覽器中執行. 讓學員了解使用階層式架構管理資料的便利性.&lt;/p&gt;
+&lt;p&gt;直接列印結果&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>計算機程式 W14 範例整理</title><link href="./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html" rel="alternate"></link><published>2016-12-06T13:00:00+08:00</published><updated>2016-12-06T13:00:00+08:00</updated><author><name>蕭志安</name></author><id>tag:,2016-12-06:./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html</id><summary type="html">&lt;p&gt;本週的學習重點在導入 Leo Editor &lt;a href="http://leoeditor.com/tutorial-programming.html"&gt;@clean&lt;/a&gt; 節點指令的用法, 利用子節點管理各章節的範例, 逐一將程式改寫為 Brython 格式後, 直接在瀏覽器中執行. 讓學員了解使用階層式架構管理資料的便利性.&lt;/p&gt;
 
 
 &lt;p&gt;以下為 &lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 中的 ch01 綜合範例, 其餘範例位於本 Leo Editor 專案檔中的 "Python3 程式範例" 節點, 請各組一一將範例程式碼與執行結果, 放入各學員的課程網誌中.&lt;/p&gt;
@@ -123,7 +123,7 @@ from browser import alert
 '''
 
 def get_input(ev):
-    the_input= input("我上課不會滑手機")
+    the_input= input("請輸入")
     alert("輸入為:"+str(the_input))
 
 document['ch01'].bind('click',get_input)

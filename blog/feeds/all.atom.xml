@@ -1,5 +1,408 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall CPA 課程網誌 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2016-12-12T14:35:00+08:00</updated><entry><title>W14 練習</title><link href="./w14-lian-xi.html" rel="alternate"></link><published>2016-12-12T14:35:00+08:00</published><updated>2016-12-12T14:35:00+08:00</updated><author><name>40523143</name></author><id>tag:,2016-12-12:./w14-lian-xi.html</id><summary type="html">&lt;p&gt;以下為第十四週開始的城市練習,要利用 &lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 要整理Brython 的用法.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall CPA 課程網誌 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2016-12-12T14:35:00+08:00</updated><entry><title>W14 練習</title><link href="./w14-lian-xi.html" rel="alternate"></link><published>2016-12-12T14:35:00+08:00</published><updated>2016-12-12T14:35:00+08:00</updated><author><name>40523143&lt;?xml version="1.0" encoding="utf-8"?&gt;</name></author><id>tag:,2016-12-12:./w14-lian-xi.html</id><summary type="html">&lt;!-- Created by Leo: http://leoeditor.com/leo_toc.html --&gt;
+
+&lt;p&gt;&lt;leo_file xmlns:leo="http://leoeditor.com/namespaces/leo-python-editor/1.1" &gt;
+&lt;leo_header file_format="2"/&gt;
+&lt;vnodes&gt;
+&lt;v t="yen.20161206153930.1" a="E"&gt;&lt;vh&gt;@clean 20161206.md&lt;/vh&gt;
+&lt;v t="yen.20161206155939.1"&gt;&lt;vh&gt;ch01 print() 與 input()&lt;/vh&gt;&lt;/v&gt;
+&lt;v t="leo.20161209155611.1"&gt;&lt;vh&gt;cp a w13&lt;/vh&gt;&lt;/v&gt;
+&lt;v t="yen.20161212213816.1"&gt;&lt;vh&gt;Brython editor&lt;/vh&gt;&lt;/v&gt;
+&lt;v t="yen.20161214174443.1"&gt;&lt;vh&gt;ex1 - for 迴圈&lt;/vh&gt;&lt;/v&gt;
+&lt;v t="yen.20161214175500.1"&gt;&lt;vh&gt;ex2 - input 與單位換算&lt;/vh&gt;&lt;/v&gt;
+&lt;v t="yen.20161214173619.1"&gt;&lt;vh&gt;ex3 - 基本的物件導向&lt;/vh&gt;&lt;/v&gt;
+&lt;v t="yen.20161214183810.1"&gt;&lt;vh&gt;ex4 - local_storage&lt;/vh&gt;&lt;/v&gt;
+&lt;v t="yen.20161206160433.1"&gt;&lt;vh&gt;ch02 str() 與 int() 與 float()&lt;/vh&gt;&lt;/v&gt;
+&lt;/v&gt;
+&lt;/vnodes&gt;
+&lt;tnodes&gt;
+&lt;t tx="leo.20161209155611.1"&gt;&amp;lt;!-- 重複迴圈與 input() 練習 --&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;div id="container"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+from browser import html
+container = doc['container']&lt;/p&gt;
+&lt;p&gt;def numPrint(ev):
+    mystring = ""
+    num = input("請輸入重複執行次數:")
+    #for i in range(1, 11):
+    for i in range(1, int(num)+1):
+        mystring += str(i) + ": hello mde" + html.BR()
+    container &amp;lt;= mystring&lt;/p&gt;
+&lt;p&gt;doc['w13'].bind('click',numPrint)
+&amp;lt;/script&amp;gt;
+&amp;lt;button id="w13"&amp;gt;取重複執行次數後, 列印出來&amp;lt;/button&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;pre class="brush: python"&amp;gt;
+&amp;lt;div id="container"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+from browser import html&lt;/p&gt;
+&lt;h1&gt;利用 document 根據 div 標註 id 設為 container 變數&lt;/h1&gt;
+&lt;p&gt;container = doc['container']&lt;/p&gt;
+&lt;h1&gt;因為此函式與滑鼠互動, 需要 event 當作輸入&lt;/h1&gt;
+&lt;p&gt;def numPrint(ev):
+    mystring = ""
+    num = input("請輸入重複執行次數:")
+    #for i in range(1, 11):
+    for i in range(1, int(num)+1):
+        mystring += str(i) + ": hello mde" + html.BR()
+    container &amp;lt;= mystring&lt;/p&gt;
+&lt;h1&gt;與 id 為 'w13' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 numPrint 函式執行&lt;/h1&gt;
+&lt;p&gt;doc['w13'].bind('click',numPrint)
+&amp;lt;/script&amp;gt;
+&amp;lt;button id="w13"&amp;gt;取重複執行次數後, 列印出來&amp;lt;/button&amp;gt;
+&amp;lt;/pre&amp;gt;&lt;/p&gt;
+&lt;p&gt;開始進行範例分類:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;接受使用者輸入, 然後利用 int() 或 str() 或 float() 函式轉為題目所需的資料型別
+input() 取回的資料為字串, 經過 int() 可以轉為整數
+若 num 變數內容為整數, 經過 str() 可以轉為字串, 然後再與其他字串進行結合後列印&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;練習: 編寫一個可以將使用者輸入的攝氏溫度, 轉為華氏溫度.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;lt;div id="temperature"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+from browser import html&lt;/p&gt;
+&lt;h1&gt;利用 document 根據 div 標註 id 設為 container 變數&lt;/h1&gt;
+&lt;p&gt;container = doc['temperature']&lt;/p&gt;
+&lt;h1&gt;因為此函式與滑鼠互動, 需要 event 當作輸入&lt;/h1&gt;
+&lt;p&gt;def convTemp(event):
+    mystring = ""
+    cdegree = input("請輸入攝氏溫度:")
+    fdegree = float(cdegree)*9/5 + 32
+    output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度" + html.BR()
+    container &amp;lt;= output_string&lt;/p&gt;
+&lt;h1&gt;與 id 為 'w13-1' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 convTemp 函式執行&lt;/h1&gt;
+&lt;p&gt;doc['w13-1'].bind('click',convTemp)
+&amp;lt;/script&amp;gt;
+&amp;lt;button id="w13-1"&amp;gt;取攝氏溫度, 轉為華氏溫度&amp;lt;/button&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;pre class="brush: python"&amp;gt;
+&amp;lt;div id="temperature"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+from browser import html&lt;/p&gt;
+&lt;h1&gt;利用 document 根據 div 標註 id 設為 container 變數&lt;/h1&gt;
+&lt;p&gt;container = doc['temperature']&lt;/p&gt;
+&lt;h1&gt;因為此函式與滑鼠互動, 需要 event 當作輸入&lt;/h1&gt;
+&lt;p&gt;def convTemp(event):
+    mystring = ""
+    cdegree = input("請輸入攝氏溫度:")
+    fdegree = float(cdegree)*9/5 + 32
+    output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度" + html.BR()
+    container &amp;lt;= output_string&lt;/p&gt;
+&lt;h1&gt;與 id 為 'w13-1' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 convTemp 函式執行&lt;/h1&gt;
+&lt;p&gt;doc['w13-1'].bind('click',convTemp)
+&amp;lt;/script&amp;gt;
+&amp;lt;button id="w13-1"&amp;gt;取攝氏溫度, 轉為華氏溫度&amp;lt;/button&amp;gt;
+&amp;lt;/pre&amp;gt;
+&lt;/t&gt;
+&lt;t tx="yen.20161206153930.1"&gt;@language md
+Title: 計算機程式 W14 範例整理
+Date: 2016-12-06 13:00
+Category: Course
+Tags: Brython
+Author: yen&lt;/p&gt;
+&lt;p&gt;本週的學習重點在導入 Leo Editor &amp;lt;a href="http://leoeditor.com/tutorial-programming.html"&amp;gt;@clean&amp;lt;/a&amp;gt; 節點指令的用法, 利用子節點管理各章節的範例, 逐一將程式改寫為 Brython 格式後, 直接在瀏覽器中執行. 讓學員了解使用階層式架構管理資料的便利性.&lt;/p&gt;
+&lt;p&gt;&amp;lt;!-- PELICAN_END_SUMMARY --&amp;gt;&lt;/p&gt;
+&lt;p&gt;以下為 &amp;lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&amp;gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&amp;lt;/a&amp;gt; 中的 ch01 綜合範例, 其餘範例位於本 Leo Editor 專案檔中的 "Python3 程式範例" 節點, 請各組一一將範例程式碼與執行結果, 放入各學員的課程網誌中.&lt;/p&gt;
+&lt;p&gt;本課程 W15 - W18 週將利用 &amp;lt;a href="./../course/introduction_to_prog_python3_2012.pdf"&amp;gt;introduction_to_prog_python3_2012.pdf&amp;lt;/a&amp;gt; 與 &amp;lt;a href="./../course/python_for_everybody_2015.pdf"&amp;gt;python_for_everybody_2015.pdf&amp;lt;/a&amp;gt; 中有關物件導向的說明, 並且配合 &amp;lt;a href="https://github.com/mdecourse/webgame"&amp;gt;https://github.com/mdecourse/webgame&amp;lt;/a&amp;gt; 倉儲中的 Leo Editor 專案, 希望各組能夠了解利用 Python3 與 Brython 語法處理&amp;lt;a href="http://mde.tw/webgame/bs.html"&amp;gt;靜態圖檔&amp;lt;/a&amp;gt;、&amp;lt;a href="http://mde.tw/webgame/bunny.html"&amp;gt;動態圖檔&amp;lt;/a&amp;gt;與&amp;lt;a href="http://mde.tw/webgame/spacewar.html"&amp;gt;網際遊戲&amp;lt;/a&amp;gt;的運作原理, 順利完成各組的期末報告.&lt;/p&gt;
+&lt;p&gt;&amp;lt;!-- 導入 FileSaver --&amp;gt;
+&amp;lt;script type="text/javascript" src="./../FileSaver.min.js"&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;!-- 導入 Brython 標準程式庫 --&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&amp;gt;
+&amp;lt;/script&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;!-- 啟動 Brython --&amp;gt;
+&amp;lt;script&amp;gt;
+window.onload=function(){
+brython(1);
+}
+&amp;lt;/script&amp;gt;
+&lt;/t&gt;
+&lt;t tx="yen.20161206155939.1"&gt;&amp;lt;!-- ch01 基本的列印與輸入函式 --&amp;gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document
+from browser import alert&lt;/p&gt;
+&lt;p&gt;'''
+    # 利用 input() 取得使用者輸入, 然後進行資料處理或運算後, 列出結果
+    #01-01.py
+    print ("Hello World!")
+    #01-02.py
+    thetext = input("Enter some text ")
+    print ("This is what you entered:")
+    print (thetext)
+    #01-03.py
+    # Note that \n within quote marks forces a new line to be printed
+    thetext = input("Enter some text\n")
+    print ("This is what you entered:")
+    print (thetext)
+    #01-04.py
+    prompt  = "Enter a some text "
+    thetext = input(prompt)
+    print ("This is what you entered:")
+    print (thetext)
+'''&lt;/p&gt;
+&lt;p&gt;def get_input(ev):
+    the_input= input("請輸入")
+    alert("輸入為:"+str(the_input))&lt;/p&gt;
+&lt;p&gt;document['ch01'].bind('click',get_input)
+&amp;lt;/script&amp;gt;
+&amp;lt;button id="ch01"&amp;gt;取輸入後, 列印出來&amp;lt;/button&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;pre class="brush: python"&amp;gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document
+from browser import alert&lt;/p&gt;
+&lt;p&gt;def get_input(ev):
+    the_input= input("請輸入")
+    alert("輸入為:"+str(the_input))&lt;/p&gt;
+&lt;p&gt;document['ch01'].bind('click',get_input)
+&amp;lt;/script&amp;gt;
+&amp;lt;button id="ch01"&amp;gt;取輸入後, 列印出來&amp;lt;/button&amp;gt;
+&amp;lt;/pre&amp;gt;&lt;/t&gt;
+&lt;t tx="yen.20161206160433.1"&gt;&amp;lt;script type="text/python3"&amp;gt;
+from browser import document
+from browser import alert
+&amp;lt;/script&amp;gt;&lt;/t&gt;
+&lt;t tx="yen.20161212213816.1"&gt;&amp;lt;script src="./../ace/ace.js" type="text/javascript" charset="utf-8"&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src="./../ace/ext-language_tools.js" type="text/javascript" charset="utf-8"&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src="./../ace/mode-python3.js" type="text/javascript" charset="utf-8"&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src="./../ace/snippets/python.js" type="text/javascript" charset="utf-8"&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;script type="text/python3" id="script1"&amp;gt;
+import sys
+import time
+import traceback
+import javascript&lt;/p&gt;
+&lt;p&gt;from browser import document as doc, window, alert&lt;/p&gt;
+&lt;p&gt;has_ace = True
+try:
+    editor = window.ace.edit("editor")
+    session = editor.getSession()
+    session.setMode("ace/mode/python")&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;editor.setOptions({
+ &amp;#39;enableLiveAutocompletion&amp;#39;: True,
+ &amp;#39;enableSnippets&amp;#39;: True,
+ &amp;#39;highlightActiveLine&amp;#39;: False,
+ &amp;#39;highlightSelectedWord&amp;#39;: True
+})
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;except:
+    from browser import html
+    editor = html.TEXTAREA(rows=20, cols=70)
+    doc["editor"] &amp;lt;= editor
+    def get_value(): return editor.value
+    def set_value(x):editor.value = x
+    editor.getValue = get_value
+    editor.setValue = set_value
+    has_ace = False&lt;/p&gt;
+&lt;p&gt;if hasattr(window, 'localStorage'):
+    from browser.local_storage import storage
+else:
+    storage = None&lt;/p&gt;
+&lt;p&gt;def reset_src():
+    if storage is not None and "py_src" in storage:
+        editor.setValue(storage["py_src"])
+    else:
+        editor.setValue('for i in range(10):\n\tprint(i)')
+    editor.scrollToRow(0)
+    editor.gotoLine(0)&lt;/p&gt;
+&lt;p&gt;def reset_src_area():
+    if storage and "py_src" in storage:
+        editor.value = storage["py_src"]
+    else:
+        editor.value = 'for i in range(10):\n\tprint(i)'&lt;/p&gt;
+&lt;p&gt;class cOutput:&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;def __init__(self,target):
+    self.target = doc[target]
+def write(self,data):
+    self.target.value += str(data)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h1&gt;if "console" in doc:&lt;/h1&gt;
+&lt;p&gt;sys.stdout = cOutput("console")
+sys.stderr = cOutput("console")&lt;/p&gt;
+&lt;p&gt;def to_str(xx):
+    return str(xx)&lt;/p&gt;
+&lt;p&gt;info = sys.implementation.version
+doc['version'].text = 'Brython %s.%s.%s' % (info.major, info.minor, info.micro)&lt;/p&gt;
+&lt;p&gt;output = ''&lt;/p&gt;
+&lt;p&gt;def show_console(ev):
+    doc["console"].value = output
+    doc["console"].cols = 60
+    doc["console"].rows = 10&lt;/p&gt;
+&lt;h1&gt;load a Python script&lt;/h1&gt;
+&lt;p&gt;def load_script(evt):
+    _name = evt.target.value + '?foo=%s' % time.time()
+    editor.setValue(open(_name).read())&lt;/p&gt;
+&lt;h1&gt;run a script, in global namespace if in_globals is True&lt;/h1&gt;
+&lt;p&gt;def run(*args):
+    global output
+    doc["console"].value = ''
+    src = editor.getValue()
+    if storage is not None:
+       storage["py_src"] = src&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;t0 = time.perf_counter()
+try:
+    #ns = {&amp;#39;__name__&amp;#39;:&amp;#39;__main__&amp;#39;}
+    ns = {&amp;#39;__name__&amp;#39;:&amp;#39;editor&amp;#39;}
+    exec(src, ns)
+    state = 1
+except Exception as exc:
+    traceback.print_exc(file=sys.stderr)
+    state = 0
+output = doc[&amp;quot;console&amp;quot;].value
+
+print(&amp;#39;&amp;amp;lt;completed in %6.2f ms&amp;amp;gt;&amp;#39; % ((time.perf_counter() - t0) * 1000.0))
+return state
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;if has_ace:
+    reset_src()
+else:
+    reset_src_area()&lt;/p&gt;
+&lt;p&gt;def clear_console(ev):
+    doc["console"].value = ""&lt;/p&gt;
+&lt;p&gt;doc['run'].bind('click',run)
+doc['show_console'].bind('click',show_console)
+doc['clear_console'].bind('click',clear_console)
+&amp;lt;/script&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;div id="version"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;br /&amp;gt;
+&amp;lt;div id="editor" style="width:600px;height:300px;"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;br /&amp;gt;
+&amp;lt;form id="text-options"&amp;gt;
+    &amp;lt;label&amp;gt;Filename: &amp;lt;input type="text" class="filename" id="text-filename" placeholder="a plain document"/&amp;gt;.txt&amp;lt;/label&amp;gt;
+    &amp;lt;input type="submit" value="Save"/&amp;gt;
+&amp;lt;/form&amp;gt;
+&amp;lt;button id="run"&amp;gt;Run&amp;lt;/button&amp;gt;
+&amp;lt;button id="show_console"&amp;gt;Output&amp;lt;/button&amp;gt;
+&amp;lt;button id="clear_console"&amp;gt;清除&amp;lt;/button&amp;gt;
+&amp;lt;div style="width:100%;height:100%;"&amp;gt;
+&amp;lt;textarea id="console" autocomplete="off"&amp;gt;&amp;lt;/textarea&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;div id="common"&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/t&gt;
+&lt;t tx="yen.20161214173619.1"&gt;
+&amp;lt;!-- 請注意, 在 &amp;lt;script&amp;gt; 標註前一定要至少空一行 --&amp;gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+import script1&lt;/p&gt;
+&lt;p&gt;def ex3(ev):
+    script1.editor.setValue('''# this is a comment
+import math  # imports make code from other modules available&lt;/p&gt;
+&lt;h1&gt;code blocks are initiated by a trailing colon followed by indented lines&lt;/h1&gt;
+&lt;p&gt;class Circle:                          # define a class
+    def &lt;strong&gt;init&lt;/strong&gt;(self, radius):   # constructor with parameter radius
+        self.radius = radius      # store the parameter in a class variable&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;def get_area(self):            # define a function that belongs to the class
+    return math.pi*self.radius*self.radius
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h1&gt;code that is not in a class is executed immediately&lt;/h1&gt;
+&lt;p&gt;for i in range(1, 10):
+    # bitwise operation - https://wiki.python.org/moin/BitwiseOperators
+    if (i &amp;amp; 1) == 0:
+        continue
+    circle = Circle(i)              # create an instance
+    print("A circle with radius {0} has area {1:0.2f}".format(
+        i, circle.get_area()      # &lt;code&gt;print&lt;/code&gt; writes output to the console
+    ))
+    ''')
+    script1.editor.scrollToRow(0)
+    script1.editor.gotoLine(0)
+doc['ex3'].bind('click',ex3)
+&amp;lt;/script&amp;gt;
+&amp;lt;a id="ex3"&amp;gt;ex3&amp;lt;/a&amp;gt; - 基本的物件導向範例
+&lt;/t&gt;
+&lt;t tx="yen.20161214174443.1"&gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+import script1&lt;/p&gt;
+&lt;p&gt;def ex1(ev):
+    script1.editor.setValue('''for i in range(10):
+    print(i)
+    ''')
+    script1.editor.scrollToRow(0)
+    script1.editor.gotoLine(0)
+doc['ex1'].bind('click',ex1)
+&amp;lt;/script&amp;gt;&amp;lt;a id="ex1"&amp;gt;ex1&amp;lt;/a&amp;gt; - 簡單的 for 迴圈範例
+&lt;/t&gt;
+&lt;t tx="yen.20161214175500.1"&gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+import script1&lt;/p&gt;
+&lt;p&gt;def ex2(ev):
+    script1.editor.setValue('''#溫度轉換程式
+from browser import document as doc&lt;/p&gt;
+&lt;h1&gt;因為此函式與滑鼠互動, 需要 event 當作輸入&lt;/h1&gt;
+&lt;p&gt;def convTemp():
+    mystring = ""
+    cdegree = input("請輸入攝氏溫度:")
+    fdegree = float(cdegree)*9/5 + 32
+    output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度" 
+    # 利用 print() 將轉換結果送到 console 區
+    print(output_string)&lt;/p&gt;
+&lt;h1&gt;直接呼叫 convTemp() 執行&lt;/h1&gt;
+&lt;p&gt;convTemp()
+    ''')
+    script1.editor.scrollToRow(0)
+    script1.editor.gotoLine(0)
+doc['ex2'].bind('click',ex2)
+&amp;lt;/script&amp;gt;&amp;lt;a id="ex2"&amp;gt;ex2&amp;lt;/a&amp;gt; - input() 與函式定義進行溫度轉換&lt;/t&gt;
+&lt;t tx="yen.20161214183810.1"&gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+import script1&lt;/p&gt;
+&lt;p&gt;def ex4(ev):
+    script1.editor.setValue('''#ex4
+from browser.local_storage import storage&lt;/p&gt;
+&lt;h1&gt;列出 py_src 對應的儲存內容&lt;/h1&gt;
+&lt;p&gt;print(storage["py_src"])&lt;/p&gt;
+&lt;h1&gt;接著將要使用 FileSaver.js 將內容存在 local 區&lt;/h1&gt;
+&lt;h1&gt;https://github.com/eligrey/FileSaver.js/&lt;/h1&gt;
+&lt;h1&gt;https://eligrey.com/demos/FileSaver.js/&lt;/h1&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;#39;&amp;#39;&amp;#39;)
+script1.editor.scrollToRow(0)
+script1.editor.gotoLine(0)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;doc['ex4'].bind('click',ex4)
+&amp;lt;/script&amp;gt;&amp;lt;a id="ex4"&amp;gt;ex4&amp;lt;/a&amp;gt; - 將程式在近端存檔&lt;/t&gt;
+&lt;/tnodes&gt;
+&lt;/leo_file&gt;&lt;/p&gt;
+&lt;p&gt;以下為第十四週開始的城市練習,要利用 &lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 要整理Brython 的用法.
 &lt;/p&gt;
 &lt;!-- 導入 Brython 標準程式庫 --&gt;
 
@@ -110,7 +513,7 @@ container &lt;= mystring
 &lt;p&gt;開始進行範例分配&lt;/p&gt;
 &lt;p&gt;接受使用者輸入&lt;/p&gt;
 &lt;p&gt;利用aler()顯示結果&lt;/p&gt;
-&lt;p&gt;直接列印結果&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>計算機程式 W14 範例整理</title><link href="./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html" rel="alternate"></link><published>2016-12-06T13:00:00+08:00</published><updated>2016-12-06T13:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-12-06:./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html</id><summary type="html">&lt;p&gt;本週的學習重點在導入 Leo Editor &lt;a href="http://leoeditor.com/tutorial-programming.html"&gt;@clean&lt;/a&gt; 節點指令的用法, 利用子節點管理各章節的範例, 逐一將程式改寫為 Brython 格式後, 直接在瀏覽器中執行. 讓學員了解使用階層式架構管理資料的便利性.&lt;/p&gt;
+&lt;p&gt;直接列印結果&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>計算機程式 W14 範例整理</title><link href="./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html" rel="alternate"></link><published>2016-12-06T13:00:00+08:00</published><updated>2016-12-06T13:00:00+08:00</updated><author><name>蕭志安</name></author><id>tag:,2016-12-06:./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html</id><summary type="html">&lt;p&gt;本週的學習重點在導入 Leo Editor &lt;a href="http://leoeditor.com/tutorial-programming.html"&gt;@clean&lt;/a&gt; 節點指令的用法, 利用子節點管理各章節的範例, 逐一將程式改寫為 Brython 格式後, 直接在瀏覽器中執行. 讓學員了解使用階層式架構管理資料的便利性.&lt;/p&gt;
 
 
 &lt;p&gt;以下為 &lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 中的 ch01 綜合範例, 其餘範例位於本 Leo Editor 專案檔中的 "Python3 程式範例" 節點, 請各組一一將範例程式碼與執行結果, 放入各學員的課程網誌中.&lt;/p&gt;
@@ -160,7 +563,7 @@ from browser import alert
 '''
 
 def get_input(ev):
-    the_input= input("我上課不會滑手機")
+    the_input= input("請輸入")
     alert("輸入為:"+str(the_input))
 
 document['ch01'].bind('click',get_input)
