@@ -168,9 +168,9 @@
 <v t="leo.20161215205252.1"><vh>@edit 20161114.md</vh></v>
 <v t="leo.20161215205301.1"><vh>@edit 20161121.md</vh></v>
 <v t="leo.20161215205308.1"><vh>@edit 20161128.md</vh></v>
+<v t="leo.20161230144310.1"><vh>@edit 20161230.md</vh></v>
 <v t="leo.20161216135655.1"><vh>@edit 20161216.md</vh></v>
-<v t="leo.20161216154841.1" a="E"><vh>@clean 20161206.md</vh>
-<v t="leo.20161230133422.1"><vh>@edit 20161230.md</vh></v>
+<v t="leo.20161216154841.1"><vh>@clean 20161206.md</vh>
 <v t="leo.20161216154841.2"><vh>ch01 print() 與 input()</vh></v>
 <v t="leo.20161216154841.3"><vh>cp a w13</vh></v>
 <v t="leo.20161216154841.4"><vh>Brython editor</vh></v>
@@ -183,7 +183,7 @@
 <v t="leo.20161215205351.1"><vh>@edit 20161209a.md</vh></v>
 <v t="leo.20161215205357.1"><vh>@edit 20161209b.md</vh></v>
 <v t="leo.20161215205319.1"><vh>@edit 20161215.md</vh></v>
-<v t="leo.20161216150234.1" a="E"><vh>@clean 20161206.md</vh>
+<v t="leo.20161216150234.1"><vh>@clean 20161206.md</vh>
 <v t="leo.20161216150234.2"><vh>ch01 print() 與 input()</vh></v>
 <v t="leo.20161216150234.3"><vh>cp a w13</vh></v>
 <v t="leo.20161216150234.4"><vh>Brython editor</vh></v>
@@ -193,6 +193,7 @@
 <v t="leo.20161216150234.8"><vh>ex4 - local_storage</vh></v>
 <v t="leo.20161216150234.9"><vh>ch02 str() 與 int() 與 float()</vh></v>
 </v>
+<v t="leo.20161230145813.1"><vh>newHeadline</vh></v>
 </v>
 </v>
 </v>
@@ -1489,6 +1490,7 @@ document['ch01'].bind('click',get_input)
 &lt;button id="ch01"&gt;取輸入後, 列印出來&lt;/button&gt;
 &lt;/pre&gt;
 </t>
+<t tx="leo.20161230145813.1"></t>
 <t tx="yen.20161011114704.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 @others
@@ -2053,7 +2055,8 @@ def domake():
 
 # 利用執行緒執行 https 伺服器
 make = threading.Thread(target=domake)
-make.start()</t>
+make.start()
+</t>
 <t tx="yen.20161022151749.1">sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout localhost.key -out localhost.crt
 
 </t>
