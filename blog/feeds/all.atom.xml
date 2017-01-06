@@ -1,5 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall CPA 課程網誌 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2016-12-30T12:00:00+08:00</updated><entry><title>W16 新年快樂</title><link href="./w16-xin-nian-kuai-le.html" rel="alternate"></link><published>2016-12-30T12:00:00+08:00</published><updated>2016-12-30T12:00:00+08:00</updated><author><name>40523143</name></author><id>tag:,2016-12-30:./w16-xin-nian-kuai-le.html</id><summary type="html">&lt;p&gt;2017年元旦快樂&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall CPA 課程網誌 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2017-01-06T12:00:00+08:00</updated><entry><title>W17</title><link href="./w17.html" rel="alternate"></link><published>2017-01-06T12:00:00+08:00</published><updated>2017-01-06T12:00:00+08:00</updated><author><name>40523143</name></author><id>tag:,2017-01-06:./w17.html</id><summary type="html">&lt;p&gt;2017&lt;/p&gt;
+
+
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;!-- 以下可以執行  Brython 程式 --&gt;
+
+&lt;canvas id="onebar" width="400" height="400"&gt;&lt;/canvas&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import math
+# 準備繪圖畫布
+canvas = doc["onebar"]
+ctx = canvas.getContext("2d")
+
+# 畫圓函式
+def circle(x,y,r):
+    ctx.beginPath()
+    ctx.arc(x, y, r, 0, math.pi*2, True)
+    ctx.fill()
+    ctx.closePath()
+
+
+# 以下可以利用 ctx 物件進行畫圖
+# 先畫一條直線
+ctx.beginPath()
+# 設定線的寬度為 1 個單位
+ctx.lineWidth = 1
+# 將畫筆移動到 (200, 200) 座標點
+ctx.moveTo(200, 200)
+# 然後畫直線到 200, 300) 座標點
+ctx.lineTo(200, 300)
+# 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+ctx.strokeStyle = "blue"
+# 實際執行畫線
+ctx.stroke()
+ctx.closePath()
+
+circle(200,200,5)
+&lt;/script&gt;</summary><category term="Brython"></category></entry><entry><title>W16 新年快樂</title><link href="./w16-xin-nian-kuai-le.html" rel="alternate"></link><published>2016-12-30T12:00:00+08:00</published><updated>2016-12-30T12:00:00+08:00</updated><author><name>40523143</name></author><id>tag:,2016-12-30:./w16-xin-nian-kuai-le.html</id><summary type="html">&lt;p&gt;2017年元旦快樂&lt;/p&gt;
 
 
 &lt;p&gt;首先了解random亂數模組的用法&lt;/p&gt;
@@ -145,7 +197,924 @@ for i in range(5):
 do["b1"].bind("click", compa)
 &lt;/script&gt;
 &lt;button id="b1"&gt;compa&lt;/button&gt;
-&lt;/pre&gt;</summary><category term="Brython"></category></entry><entry><title>W14 練習</title><link href="./w14-lian-xi.html" rel="alternate"></link><published>2016-12-12T14:35:00+08:00</published><updated>2016-12-12T14:35:00+08:00</updated><author><name>40523209</name></author><id>tag:,2016-12-12:./w14-lian-xi.html</id><summary type="html">&lt;p&gt;以下為第十四週開始的城市練習,要利用 &lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 要整理Brython 的用法.
+&lt;/pre&gt;</summary><category term="Brython"></category></entry><entry><title>W14 練習</title><link href="./w14-lian-xi.html" rel="alternate"></link><published>2016-12-12T14:35:00+08:00</published><updated>2016-12-12T14:35:00+08:00</updated><author><name>40523143&lt;?xml version="1.0" encoding="utf-8"?&gt;</name></author><id>tag:,2016-12-12:./w14-lian-xi.html</id><summary type="html">&lt;!-- Created by Leo: http://leoeditor.com/leo_toc.html --&gt;
+
+&lt;p&gt;&lt;leo_file xmlns:leo="http://leoeditor.com/namespaces/leo-python-editor/1.1" &gt;
+&lt;leo_header file_format="2"/&gt;
+&lt;vnodes&gt;
+&lt;v t="yen.20161206153930.1" a="E"&gt;&lt;vh&gt;@clean 20161206.md&lt;/vh&gt;
+&lt;v t="yen.20161206155939.1"&gt;&lt;vh&gt;ch01 print() 與 input()&lt;/vh&gt;&lt;/v&gt;
+&lt;v t="leo.20161209155611.1"&gt;&lt;vh&gt;cp a w13&lt;/vh&gt;&lt;/v&gt;
+&lt;v t="yen.20161212213816.1"&gt;&lt;vh&gt;Brython editor&lt;/vh&gt;&lt;/v&gt;
+&lt;v t="yen.20161214174443.1"&gt;&lt;vh&gt;ex1 - for 迴圈&lt;/vh&gt;&lt;/v&gt;
+&lt;v t="yen.20161214175500.1"&gt;&lt;vh&gt;ex2 - input 與單位換算&lt;/vh&gt;&lt;/v&gt;
+&lt;v t="yen.20161214173619.1"&gt;&lt;vh&gt;ex3 - 基本的物件導向&lt;/vh&gt;&lt;/v&gt;
+&lt;v t="yen.20161214183810.1"&gt;&lt;vh&gt;ex4 - local_storage&lt;/vh&gt;&lt;/v&gt;
+&lt;v t="yen.20161206160433.1"&gt;&lt;vh&gt;ch02 str() 與 int() 與 float()&lt;/vh&gt;&lt;/v&gt;
+&lt;/v&gt;
+&lt;/vnodes&gt;
+&lt;tnodes&gt;
+&lt;t tx="leo.20161209155611.1"&gt;&amp;lt;!-- 重複迴圈與 input() 練習 --&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;div id="container"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+from browser import html
+container = doc['container']&lt;/p&gt;
+&lt;p&gt;def numPrint(ev):
+    mystring = ""
+    num = input("請輸入重複執行次數:")
+    #for i in range(1, 11):
+    for i in range(1, int(num)+1):
+        mystring += str(i) + ": hello mde" + html.BR()
+    container &amp;lt;= mystring&lt;/p&gt;
+&lt;p&gt;doc['w13'].bind('click',numPrint)
+&amp;lt;/script&amp;gt;
+&amp;lt;button id="w13"&amp;gt;取重複執行次數後, 列印出來&amp;lt;/button&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;pre class="brush: python"&amp;gt;
+&amp;lt;div id="container"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+from browser import html&lt;/p&gt;
+&lt;h1&gt;利用 document 根據 div 標註 id 設為 container 變數&lt;/h1&gt;
+&lt;p&gt;container = doc['container']&lt;/p&gt;
+&lt;h1&gt;因為此函式與滑鼠互動, 需要 event 當作輸入&lt;/h1&gt;
+&lt;p&gt;def numPrint(ev):
+    mystring = ""
+    num = input("請輸入重複執行次數:")
+    #for i in range(1, 11):
+    for i in range(1, int(num)+1):
+        mystring += str(i) + ": hello mde" + html.BR()
+    container &amp;lt;= mystring&lt;/p&gt;
+&lt;h1&gt;與 id 為 'w13' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 numPrint 函式執行&lt;/h1&gt;
+&lt;p&gt;doc['w13'].bind('click',numPrint)
+&amp;lt;/script&amp;gt;
+&amp;lt;button id="w13"&amp;gt;取重複執行次數後, 列印出來&amp;lt;/button&amp;gt;
+&amp;lt;/pre&amp;gt;&lt;/p&gt;
+&lt;p&gt;開始進行範例分類:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;接受使用者輸入, 然後利用 int() 或 str() 或 float() 函式轉為題目所需的資料型別
+input() 取回的資料為字串, 經過 int() 可以轉為整數
+若 num 變數內容為整數, 經過 str() 可以轉為字串, 然後再與其他字串進行結合後列印&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;練習: 編寫一個可以將使用者輸入的攝氏溫度, 轉為華氏溫度.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;lt;div id="temperature"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+from browser import html&lt;/p&gt;
+&lt;h1&gt;利用 document 根據 div 標註 id 設為 container 變數&lt;/h1&gt;
+&lt;p&gt;container = doc['temperature']&lt;/p&gt;
+&lt;h1&gt;因為此函式與滑鼠互動, 需要 event 當作輸入&lt;/h1&gt;
+&lt;p&gt;def convTemp(event):
+    mystring = ""
+    cdegree = input("請輸入攝氏溫度:")
+    fdegree = float(cdegree)*9/5 + 32
+    output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度" + html.BR()
+    container &amp;lt;= output_string&lt;/p&gt;
+&lt;h1&gt;與 id 為 'w13-1' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 convTemp 函式執行&lt;/h1&gt;
+&lt;p&gt;doc['w13-1'].bind('click',convTemp)
+&amp;lt;/script&amp;gt;
+&amp;lt;button id="w13-1"&amp;gt;取攝氏溫度, 轉為華氏溫度&amp;lt;/button&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;pre class="brush: python"&amp;gt;
+&amp;lt;div id="temperature"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+from browser import html&lt;/p&gt;
+&lt;h1&gt;利用 document 根據 div 標註 id 設為 container 變數&lt;/h1&gt;
+&lt;p&gt;container = doc['temperature']&lt;/p&gt;
+&lt;h1&gt;因為此函式與滑鼠互動, 需要 event 當作輸入&lt;/h1&gt;
+&lt;p&gt;def convTemp(event):
+    mystring = ""
+    cdegree = input("請輸入攝氏溫度:")
+    fdegree = float(cdegree)*9/5 + 32
+    output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度" + html.BR()
+    container &amp;lt;= output_string&lt;/p&gt;
+&lt;h1&gt;與 id 為 'w13-1' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 convTemp 函式執行&lt;/h1&gt;
+&lt;p&gt;doc['w13-1'].bind('click',convTemp)
+&amp;lt;/script&amp;gt;
+&amp;lt;button id="w13-1"&amp;gt;取攝氏溫度, 轉為華氏溫度&amp;lt;/button&amp;gt;
+&amp;lt;/pre&amp;gt;
+&lt;/t&gt;
+&lt;t tx="yen.20161206153930.1"&gt;@language md
+Title: 計算機程式 W14 範例整理
+Date: 2016-12-06 13:00
+Category: Course
+Tags: Brython
+Author: yen&lt;/p&gt;
+&lt;p&gt;本週的學習重點在導入 Leo Editor &amp;lt;a href="http://leoeditor.com/tutorial-programming.html"&amp;gt;@clean&amp;lt;/a&amp;gt; 節點指令的用法, 利用子節點管理各章節的範例, 逐一將程式改寫為 Brython 格式後, 直接在瀏覽器中執行. 讓學員了解使用階層式架構管理資料的便利性.&lt;/p&gt;
+&lt;p&gt;&amp;lt;!-- PELICAN_END_SUMMARY --&amp;gt;&lt;/p&gt;
+&lt;p&gt;以下為 &amp;lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&amp;gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&amp;lt;/a&amp;gt; 中的 ch01 綜合範例, 其餘範例位於本 Leo Editor 專案檔中的 "Python3 程式範例" 節點, 請各組一一將範例程式碼與執行結果, 放入各學員的課程網誌中.&lt;/p&gt;
+&lt;p&gt;本課程 W15 - W18 週將利用 &amp;lt;a href="./../course/introduction_to_prog_python3_2012.pdf"&amp;gt;introduction_to_prog_python3_2012.pdf&amp;lt;/a&amp;gt; 與 &amp;lt;a href="./../course/python_for_everybody_2015.pdf"&amp;gt;python_for_everybody_2015.pdf&amp;lt;/a&amp;gt; 中有關物件導向的說明, 並且配合 &amp;lt;a href="https://github.com/mdecourse/webgame"&amp;gt;https://github.com/mdecourse/webgame&amp;lt;/a&amp;gt; 倉儲中的 Leo Editor 專案, 希望各組能夠了解利用 Python3 與 Brython 語法處理&amp;lt;a href="http://mde.tw/webgame/bs.html"&amp;gt;靜態圖檔&amp;lt;/a&amp;gt;、&amp;lt;a href="http://mde.tw/webgame/bunny.html"&amp;gt;動態圖檔&amp;lt;/a&amp;gt;與&amp;lt;a href="http://mde.tw/webgame/spacewar.html"&amp;gt;網際遊戲&amp;lt;/a&amp;gt;的運作原理, 順利完成各組的期末報告.&lt;/p&gt;
+&lt;p&gt;&amp;lt;!-- 導入 FileSaver --&amp;gt;
+&amp;lt;script type="text/javascript" src="./../FileSaver.min.js"&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;!-- 導入 Brython 標準程式庫 --&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&amp;gt;
+&amp;lt;/script&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;!-- 啟動 Brython --&amp;gt;
+&amp;lt;script&amp;gt;
+window.onload=function(){
+brython(1);
+}
+&amp;lt;/script&amp;gt;
+&lt;/t&gt;
+&lt;t tx="yen.20161206155939.1"&gt;&amp;lt;!-- ch01 基本的列印與輸入函式 --&amp;gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document
+from browser import alert&lt;/p&gt;
+&lt;p&gt;'''
+    # 利用 input() 取得使用者輸入, 然後進行資料處理或運算後, 列出結果
+    #01-01.py
+    print ("Hello World!")
+    #01-02.py
+    thetext = input("Enter some text ")
+    print ("This is what you entered:")
+    print (thetext)
+    #01-03.py
+    # Note that \n within quote marks forces a new line to be printed
+    thetext = input("Enter some text\n")
+    print ("This is what you entered:")
+    print (thetext)
+    #01-04.py
+    prompt  = "Enter a some text "
+    thetext = input(prompt)
+    print ("This is what you entered:")
+    print (thetext)
+'''&lt;/p&gt;
+&lt;p&gt;def get_input(ev):
+    the_input= input("請輸入")
+    alert("輸入為:"+str(the_input))&lt;/p&gt;
+&lt;p&gt;document['ch01'].bind('click',get_input)
+&amp;lt;/script&amp;gt;
+&amp;lt;button id="ch01"&amp;gt;取輸入後, 列印出來&amp;lt;/button&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;pre class="brush: python"&amp;gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document
+from browser import alert&lt;/p&gt;
+&lt;p&gt;def get_input(ev):
+    the_input= input("請輸入")
+    alert("輸入為:"+str(the_input))&lt;/p&gt;
+&lt;p&gt;document['ch01'].bind('click',get_input)
+&amp;lt;/script&amp;gt;
+&amp;lt;button id="ch01"&amp;gt;取輸入後, 列印出來&amp;lt;/button&amp;gt;
+&amp;lt;/pre&amp;gt;&lt;/t&gt;
+&lt;t tx="yen.20161206160433.1"&gt;&amp;lt;script type="text/python3"&amp;gt;
+from browser import document
+from browser import alert
+&amp;lt;/script&amp;gt;&lt;/t&gt;
+&lt;t tx="yen.20161212213816.1"&gt;&amp;lt;script src="./../ace/ace.js" type="text/javascript" charset="utf-8"&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src="./../ace/ext-language_tools.js" type="text/javascript" charset="utf-8"&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src="./../ace/mode-python3.js" type="text/javascript" charset="utf-8"&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src="./../ace/snippets/python.js" type="text/javascript" charset="utf-8"&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;script type="text/python3" id="script1"&amp;gt;
+import sys
+import time
+import traceback
+import javascript&lt;/p&gt;
+&lt;p&gt;from browser import document as doc, window, alert&lt;/p&gt;
+&lt;p&gt;has_ace = True
+try:
+    editor = window.ace.edit("editor")
+    session = editor.getSession()
+    session.setMode("ace/mode/python")&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;editor.setOptions({
+ &amp;#39;enableLiveAutocompletion&amp;#39;: True,
+ &amp;#39;enableSnippets&amp;#39;: True,
+ &amp;#39;highlightActiveLine&amp;#39;: False,
+ &amp;#39;highlightSelectedWord&amp;#39;: True
+})
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;except:
+    from browser import html
+    editor = html.TEXTAREA(rows=20, cols=70)
+    doc["editor"] &amp;lt;= editor
+    def get_value(): return editor.value
+    def set_value(x):editor.value = x
+    editor.getValue = get_value
+    editor.setValue = set_value
+    has_ace = False&lt;/p&gt;
+&lt;p&gt;if hasattr(window, 'localStorage'):
+    from browser.local_storage import storage
+else:
+    storage = None&lt;/p&gt;
+&lt;p&gt;def reset_src():
+    if storage is not None and "py_src" in storage:
+        editor.setValue(storage["py_src"])
+    else:
+        editor.setValue('for i in range(10):\n\tprint(i)')
+    editor.scrollToRow(0)
+    editor.gotoLine(0)&lt;/p&gt;
+&lt;p&gt;def reset_src_area():
+    if storage and "py_src" in storage:
+        editor.value = storage["py_src"]
+    else:
+        editor.value = 'for i in range(10):\n\tprint(i)'&lt;/p&gt;
+&lt;p&gt;class cOutput:&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;def __init__(self,target):
+    self.target = doc[target]
+def write(self,data):
+    self.target.value += str(data)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h1&gt;if "console" in doc:&lt;/h1&gt;
+&lt;p&gt;sys.stdout = cOutput("console")
+sys.stderr = cOutput("console")&lt;/p&gt;
+&lt;p&gt;def to_str(xx):
+    return str(xx)&lt;/p&gt;
+&lt;p&gt;info = sys.implementation.version
+doc['version'].text = 'Brython %s.%s.%s' % (info.major, info.minor, info.micro)&lt;/p&gt;
+&lt;p&gt;output = ''&lt;/p&gt;
+&lt;p&gt;def show_console(ev):
+    doc["console"].value = output
+    doc["console"].cols = 60
+    doc["console"].rows = 10&lt;/p&gt;
+&lt;h1&gt;load a Python script&lt;/h1&gt;
+&lt;p&gt;def load_script(evt):
+    _name = evt.target.value + '?foo=%s' % time.time()
+    editor.setValue(open(_name).read())&lt;/p&gt;
+&lt;h1&gt;run a script, in global namespace if in_globals is True&lt;/h1&gt;
+&lt;p&gt;def run(*args):
+    global output
+    doc["console"].value = ''
+    src = editor.getValue()
+    if storage is not None:
+       storage["py_src"] = src&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;t0 = time.perf_counter()
+try:
+    #ns = {&amp;#39;__name__&amp;#39;:&amp;#39;__main__&amp;#39;}
+    ns = {&amp;#39;__name__&amp;#39;:&amp;#39;editor&amp;#39;}
+    exec(src, ns)
+    state = 1
+except Exception as exc:
+    traceback.print_exc(file=sys.stderr)
+    state = 0
+output = doc[&amp;quot;console&amp;quot;].value
+
+print(&amp;#39;&amp;amp;lt;completed in %6.2f ms&amp;amp;gt;&amp;#39; % ((time.perf_counter() - t0) * 1000.0))
+return state
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;if has_ace:
+    reset_src()
+else:
+    reset_src_area()&lt;/p&gt;
+&lt;p&gt;def clear_console(ev):
+    doc["console"].value = ""&lt;/p&gt;
+&lt;p&gt;doc['run'].bind('click',run)
+doc['show_console'].bind('click',show_console)
+doc['clear_console'].bind('click',clear_console)
+&amp;lt;/script&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;div id="version"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;br /&amp;gt;
+&amp;lt;div id="editor" style="width:600px;height:300px;"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;br /&amp;gt;
+&amp;lt;form id="text-options"&amp;gt;
+    &amp;lt;label&amp;gt;Filename: &amp;lt;input type="text" class="filename" id="text-filename" placeholder="a plain document"/&amp;gt;.txt&amp;lt;/label&amp;gt;
+    &amp;lt;input type="submit" value="Save"/&amp;gt;
+&amp;lt;/form&amp;gt;
+&amp;lt;button id="run"&amp;gt;Run&amp;lt;/button&amp;gt;
+&amp;lt;button id="show_console"&amp;gt;Output&amp;lt;/button&amp;gt;
+&amp;lt;button id="clear_console"&amp;gt;清除&amp;lt;/button&amp;gt;
+&amp;lt;div style="width:100%;height:100%;"&amp;gt;
+&amp;lt;textarea id="console" autocomplete="off"&amp;gt;&amp;lt;/textarea&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;div id="common"&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/t&gt;
+&lt;t tx="yen.20161214173619.1"&gt;
+&amp;lt;!-- 請注意, 在 &amp;lt;script&amp;gt; 標註前一定要至少空一行 --&amp;gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+import script1&lt;/p&gt;
+&lt;p&gt;def ex3(ev):
+    script1.editor.setValue('''# this is a comment
+import math  # imports make code from other modules available&lt;/p&gt;
+&lt;h1&gt;code blocks are initiated by a trailing colon followed by indented lines&lt;/h1&gt;
+&lt;p&gt;class Circle:                          # define a class
+    def &lt;strong&gt;init&lt;/strong&gt;(self, radius):   # constructor with parameter radius
+        self.radius = radius      # store the parameter in a class variable&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;def get_area(self):            # define a function that belongs to the class
+    return math.pi*self.radius*self.radius
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h1&gt;code that is not in a class is executed immediately&lt;/h1&gt;
+&lt;p&gt;for i in range(1, 10):
+    # bitwise operation - https://wiki.python.org/moin/BitwiseOperators
+    if (i &amp;amp; 1) == 0:
+        continue
+    circle = Circle(i)              # create an instance
+    print("A circle with radius {0} has area {1:0.2f}".format(
+        i, circle.get_area()      # &lt;code&gt;print&lt;/code&gt; writes output to the console
+    ))
+    ''')
+    script1.editor.scrollToRow(0)
+    script1.editor.gotoLine(0)
+doc['ex3'].bind('click',ex3)
+&amp;lt;/script&amp;gt;
+&amp;lt;a id="ex3"&amp;gt;ex3&amp;lt;/a&amp;gt; - 基本的物件導向範例
+&lt;/t&gt;
+&lt;t tx="yen.20161214174443.1"&gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+import script1&lt;/p&gt;
+&lt;p&gt;def ex1(ev):
+    script1.editor.setValue('''for i in range(10):
+    print(i)
+    ''')
+    script1.editor.scrollToRow(0)
+    script1.editor.gotoLine(0)
+doc['ex1'].bind('click',ex1)
+&amp;lt;/script&amp;gt;&amp;lt;a id="ex1"&amp;gt;ex1&amp;lt;/a&amp;gt; - 簡單的 for 迴圈範例
+&lt;/t&gt;
+&lt;t tx="yen.20161214175500.1"&gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+import script1&lt;/p&gt;
+&lt;p&gt;def ex2(ev):
+    script1.editor.setValue('''#溫度轉換程式
+from browser import document as doc&lt;/p&gt;
+&lt;h1&gt;因為此函式與滑鼠互動, 需要 event 當作輸入&lt;/h1&gt;
+&lt;p&gt;def convTemp():
+    mystring = ""
+    cdegree = input("請輸入攝氏溫度:")
+    fdegree = float(cdegree)*9/5 + 32
+    output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度" 
+    # 利用 print() 將轉換結果送到 console 區
+    print(output_string)&lt;/p&gt;
+&lt;h1&gt;直接呼叫 convTemp() 執行&lt;/h1&gt;
+&lt;p&gt;convTemp()
+    ''')
+    script1.editor.scrollToRow(0)
+    script1.editor.gotoLine(0)
+doc['ex2'].bind('click',ex2)
+&amp;lt;/script&amp;gt;&amp;lt;a id="ex2"&amp;gt;ex2&amp;lt;/a&amp;gt; - input() 與函式定義進行溫度轉換&lt;/t&gt;
+&lt;t tx="yen.20161214183810.1"&gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+import script1&lt;/p&gt;
+&lt;p&gt;def ex4(ev):
+    script1.editor.setValue('''#ex4
+from browser.local_storage import storage&lt;/p&gt;
+&lt;h1&gt;列出 py_src 對應的儲存內容&lt;/h1&gt;
+&lt;p&gt;print(storage["py_src"])&lt;/p&gt;
+&lt;h1&gt;接著將要使用 FileSaver.js 將內容存在 local 區&lt;/h1&gt;
+&lt;h1&gt;https://github.com/eligrey/FileSaver.js/&lt;/h1&gt;
+&lt;h1&gt;https://eligrey.com/demos/FileSaver.js/&lt;/h1&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;#39;&amp;#39;&amp;#39;)
+script1.editor.scrollToRow(0)
+script1.editor.gotoLine(0)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;doc['ex4'].bind('click',ex4)
+&amp;lt;/script&amp;gt;&amp;lt;a id="ex4"&amp;gt;ex4&amp;lt;/a&amp;gt; - 將程式在近端存檔&lt;/t&gt;
+&lt;/tnodes&gt;
+&lt;/leo_file&gt;&lt;/p&gt;
+&lt;p&gt;以下為第十四週開始的城市練習,要利用 &lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 要整理Brython 的用法.
+&lt;/p&gt;
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;div id ="ex1"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+container = doc['ex1']
+
+container&lt;="W14練習"
+&lt;/script&gt;
+
+&lt;div id ="ex2"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+container = doc['ex2']
+mystring = input("要印出什麼字串?")
+mynum = input("要印幾次?")
+
+for i in range(int(mynum)):
+    #container&lt;="W14練習-2"+html.BR()
+    container&lt;=mystring+html.BR()
+&lt;/script&gt;</summary><category term="每週練習"></category></entry><entry><title>W14 練習</title><link href="./w14-lian-xi.html" rel="alternate"></link><published>2016-12-12T14:35:00+08:00</published><updated>2016-12-12T14:35:00+08:00</updated><author><name>40523209</name></author><id>tag:,2016-12-12:./w14-lian-xi.html</id><summary type="html">&lt;p&gt;以下為第十四週開始的城市練習,要利用 &lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 要整理Brython 的用法.
+&lt;/p&gt;
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;div id ="ex1"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+container = doc['ex1']
+
+container&lt;="W14練習"
+&lt;/script&gt;
+
+&lt;div id ="ex2"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+container = doc['ex2']
+mystring = input("要印出什麼字串?")
+mynum = input("要印幾次?")
+
+for i in range(int(mynum)):
+    #container&lt;="W14練習-2"+html.BR()
+    container&lt;=mystring+html.BR()
+&lt;/script&gt;</summary><category term="每週練習"></category></entry><entry><title>W14 練習</title><link href="./w14-lian-xi.html" rel="alternate"></link><published>2016-12-12T14:35:00+08:00</published><updated>2016-12-12T14:35:00+08:00</updated><author><name>40523209</name></author><id>tag:,2016-12-12:./w14-lian-xi.html</id><summary type="html">&lt;p&gt;以下為第十四週開始的城市練習,要利用 &lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 要整理Brython 的用法.
+&lt;/p&gt;
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;div id ="ex1"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+container = doc['ex1']
+
+container&lt;="W14練習"
+&lt;/script&gt;
+
+&lt;div id ="ex2"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+container = doc['ex2']
+mystring = input("要印出什麼字串?")
+mynum = input("要印幾次?")
+
+for i in range(int(mynum)):
+    #container&lt;="W14練習-2"+html.BR()
+    container&lt;=mystring+html.BR()
+&lt;/script&gt;</summary><category term="每週練習"></category></entry><entry><title>W14 練習</title><link href="./w14-lian-xi.html" rel="alternate"></link><published>2016-12-12T14:35:00+08:00</published><updated>2016-12-12T14:35:00+08:00</updated><author><name>40523143&lt;?xml version="1.0" encoding="utf-8"?&gt;</name></author><id>tag:,2016-12-12:./w14-lian-xi.html</id><summary type="html">&lt;!-- Created by Leo: http://leoeditor.com/leo_toc.html --&gt;
+
+&lt;p&gt;&lt;leo_file xmlns:leo="http://leoeditor.com/namespaces/leo-python-editor/1.1" &gt;
+&lt;leo_header file_format="2"/&gt;
+&lt;vnodes&gt;
+&lt;v t="yen.20161206153930.1" a="E"&gt;&lt;vh&gt;@clean 20161206.md&lt;/vh&gt;
+&lt;v t="yen.20161206155939.1"&gt;&lt;vh&gt;ch01 print() 與 input()&lt;/vh&gt;&lt;/v&gt;
+&lt;v t="leo.20161209155611.1"&gt;&lt;vh&gt;cp a w13&lt;/vh&gt;&lt;/v&gt;
+&lt;v t="yen.20161212213816.1"&gt;&lt;vh&gt;Brython editor&lt;/vh&gt;&lt;/v&gt;
+&lt;v t="yen.20161214174443.1"&gt;&lt;vh&gt;ex1 - for 迴圈&lt;/vh&gt;&lt;/v&gt;
+&lt;v t="yen.20161214175500.1"&gt;&lt;vh&gt;ex2 - input 與單位換算&lt;/vh&gt;&lt;/v&gt;
+&lt;v t="yen.20161214173619.1"&gt;&lt;vh&gt;ex3 - 基本的物件導向&lt;/vh&gt;&lt;/v&gt;
+&lt;v t="yen.20161214183810.1"&gt;&lt;vh&gt;ex4 - local_storage&lt;/vh&gt;&lt;/v&gt;
+&lt;v t="yen.20161206160433.1"&gt;&lt;vh&gt;ch02 str() 與 int() 與 float()&lt;/vh&gt;&lt;/v&gt;
+&lt;/v&gt;
+&lt;/vnodes&gt;
+&lt;tnodes&gt;
+&lt;t tx="leo.20161209155611.1"&gt;&amp;lt;!-- 重複迴圈與 input() 練習 --&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;div id="container"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+from browser import html
+container = doc['container']&lt;/p&gt;
+&lt;p&gt;def numPrint(ev):
+    mystring = ""
+    num = input("請輸入重複執行次數:")
+    #for i in range(1, 11):
+    for i in range(1, int(num)+1):
+        mystring += str(i) + ": hello mde" + html.BR()
+    container &amp;lt;= mystring&lt;/p&gt;
+&lt;p&gt;doc['w13'].bind('click',numPrint)
+&amp;lt;/script&amp;gt;
+&amp;lt;button id="w13"&amp;gt;取重複執行次數後, 列印出來&amp;lt;/button&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;pre class="brush: python"&amp;gt;
+&amp;lt;div id="container"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+from browser import html&lt;/p&gt;
+&lt;h1&gt;利用 document 根據 div 標註 id 設為 container 變數&lt;/h1&gt;
+&lt;p&gt;container = doc['container']&lt;/p&gt;
+&lt;h1&gt;因為此函式與滑鼠互動, 需要 event 當作輸入&lt;/h1&gt;
+&lt;p&gt;def numPrint(ev):
+    mystring = ""
+    num = input("請輸入重複執行次數:")
+    #for i in range(1, 11):
+    for i in range(1, int(num)+1):
+        mystring += str(i) + ": hello mde" + html.BR()
+    container &amp;lt;= mystring&lt;/p&gt;
+&lt;h1&gt;與 id 為 'w13' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 numPrint 函式執行&lt;/h1&gt;
+&lt;p&gt;doc['w13'].bind('click',numPrint)
+&amp;lt;/script&amp;gt;
+&amp;lt;button id="w13"&amp;gt;取重複執行次數後, 列印出來&amp;lt;/button&amp;gt;
+&amp;lt;/pre&amp;gt;&lt;/p&gt;
+&lt;p&gt;開始進行範例分類:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;接受使用者輸入, 然後利用 int() 或 str() 或 float() 函式轉為題目所需的資料型別
+input() 取回的資料為字串, 經過 int() 可以轉為整數
+若 num 變數內容為整數, 經過 str() 可以轉為字串, 然後再與其他字串進行結合後列印&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;練習: 編寫一個可以將使用者輸入的攝氏溫度, 轉為華氏溫度.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;lt;div id="temperature"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+from browser import html&lt;/p&gt;
+&lt;h1&gt;利用 document 根據 div 標註 id 設為 container 變數&lt;/h1&gt;
+&lt;p&gt;container = doc['temperature']&lt;/p&gt;
+&lt;h1&gt;因為此函式與滑鼠互動, 需要 event 當作輸入&lt;/h1&gt;
+&lt;p&gt;def convTemp(event):
+    mystring = ""
+    cdegree = input("請輸入攝氏溫度:")
+    fdegree = float(cdegree)*9/5 + 32
+    output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度" + html.BR()
+    container &amp;lt;= output_string&lt;/p&gt;
+&lt;h1&gt;與 id 為 'w13-1' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 convTemp 函式執行&lt;/h1&gt;
+&lt;p&gt;doc['w13-1'].bind('click',convTemp)
+&amp;lt;/script&amp;gt;
+&amp;lt;button id="w13-1"&amp;gt;取攝氏溫度, 轉為華氏溫度&amp;lt;/button&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;pre class="brush: python"&amp;gt;
+&amp;lt;div id="temperature"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+from browser import html&lt;/p&gt;
+&lt;h1&gt;利用 document 根據 div 標註 id 設為 container 變數&lt;/h1&gt;
+&lt;p&gt;container = doc['temperature']&lt;/p&gt;
+&lt;h1&gt;因為此函式與滑鼠互動, 需要 event 當作輸入&lt;/h1&gt;
+&lt;p&gt;def convTemp(event):
+    mystring = ""
+    cdegree = input("請輸入攝氏溫度:")
+    fdegree = float(cdegree)*9/5 + 32
+    output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度" + html.BR()
+    container &amp;lt;= output_string&lt;/p&gt;
+&lt;h1&gt;與 id 為 'w13-1' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 convTemp 函式執行&lt;/h1&gt;
+&lt;p&gt;doc['w13-1'].bind('click',convTemp)
+&amp;lt;/script&amp;gt;
+&amp;lt;button id="w13-1"&amp;gt;取攝氏溫度, 轉為華氏溫度&amp;lt;/button&amp;gt;
+&amp;lt;/pre&amp;gt;
+&lt;/t&gt;
+&lt;t tx="yen.20161206153930.1"&gt;@language md
+Title: 計算機程式 W14 範例整理
+Date: 2016-12-06 13:00
+Category: Course
+Tags: Brython
+Author: yen&lt;/p&gt;
+&lt;p&gt;本週的學習重點在導入 Leo Editor &amp;lt;a href="http://leoeditor.com/tutorial-programming.html"&amp;gt;@clean&amp;lt;/a&amp;gt; 節點指令的用法, 利用子節點管理各章節的範例, 逐一將程式改寫為 Brython 格式後, 直接在瀏覽器中執行. 讓學員了解使用階層式架構管理資料的便利性.&lt;/p&gt;
+&lt;p&gt;&amp;lt;!-- PELICAN_END_SUMMARY --&amp;gt;&lt;/p&gt;
+&lt;p&gt;以下為 &amp;lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&amp;gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&amp;lt;/a&amp;gt; 中的 ch01 綜合範例, 其餘範例位於本 Leo Editor 專案檔中的 "Python3 程式範例" 節點, 請各組一一將範例程式碼與執行結果, 放入各學員的課程網誌中.&lt;/p&gt;
+&lt;p&gt;本課程 W15 - W18 週將利用 &amp;lt;a href="./../course/introduction_to_prog_python3_2012.pdf"&amp;gt;introduction_to_prog_python3_2012.pdf&amp;lt;/a&amp;gt; 與 &amp;lt;a href="./../course/python_for_everybody_2015.pdf"&amp;gt;python_for_everybody_2015.pdf&amp;lt;/a&amp;gt; 中有關物件導向的說明, 並且配合 &amp;lt;a href="https://github.com/mdecourse/webgame"&amp;gt;https://github.com/mdecourse/webgame&amp;lt;/a&amp;gt; 倉儲中的 Leo Editor 專案, 希望各組能夠了解利用 Python3 與 Brython 語法處理&amp;lt;a href="http://mde.tw/webgame/bs.html"&amp;gt;靜態圖檔&amp;lt;/a&amp;gt;、&amp;lt;a href="http://mde.tw/webgame/bunny.html"&amp;gt;動態圖檔&amp;lt;/a&amp;gt;與&amp;lt;a href="http://mde.tw/webgame/spacewar.html"&amp;gt;網際遊戲&amp;lt;/a&amp;gt;的運作原理, 順利完成各組的期末報告.&lt;/p&gt;
+&lt;p&gt;&amp;lt;!-- 導入 FileSaver --&amp;gt;
+&amp;lt;script type="text/javascript" src="./../FileSaver.min.js"&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;!-- 導入 Brython 標準程式庫 --&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&amp;gt;
+&amp;lt;/script&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;!-- 啟動 Brython --&amp;gt;
+&amp;lt;script&amp;gt;
+window.onload=function(){
+brython(1);
+}
+&amp;lt;/script&amp;gt;
+&lt;/t&gt;
+&lt;t tx="yen.20161206155939.1"&gt;&amp;lt;!-- ch01 基本的列印與輸入函式 --&amp;gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document
+from browser import alert&lt;/p&gt;
+&lt;p&gt;'''
+    # 利用 input() 取得使用者輸入, 然後進行資料處理或運算後, 列出結果
+    #01-01.py
+    print ("Hello World!")
+    #01-02.py
+    thetext = input("Enter some text ")
+    print ("This is what you entered:")
+    print (thetext)
+    #01-03.py
+    # Note that \n within quote marks forces a new line to be printed
+    thetext = input("Enter some text\n")
+    print ("This is what you entered:")
+    print (thetext)
+    #01-04.py
+    prompt  = "Enter a some text "
+    thetext = input(prompt)
+    print ("This is what you entered:")
+    print (thetext)
+'''&lt;/p&gt;
+&lt;p&gt;def get_input(ev):
+    the_input= input("請輸入")
+    alert("輸入為:"+str(the_input))&lt;/p&gt;
+&lt;p&gt;document['ch01'].bind('click',get_input)
+&amp;lt;/script&amp;gt;
+&amp;lt;button id="ch01"&amp;gt;取輸入後, 列印出來&amp;lt;/button&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;pre class="brush: python"&amp;gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document
+from browser import alert&lt;/p&gt;
+&lt;p&gt;def get_input(ev):
+    the_input= input("請輸入")
+    alert("輸入為:"+str(the_input))&lt;/p&gt;
+&lt;p&gt;document['ch01'].bind('click',get_input)
+&amp;lt;/script&amp;gt;
+&amp;lt;button id="ch01"&amp;gt;取輸入後, 列印出來&amp;lt;/button&amp;gt;
+&amp;lt;/pre&amp;gt;&lt;/t&gt;
+&lt;t tx="yen.20161206160433.1"&gt;&amp;lt;script type="text/python3"&amp;gt;
+from browser import document
+from browser import alert
+&amp;lt;/script&amp;gt;&lt;/t&gt;
+&lt;t tx="yen.20161212213816.1"&gt;&amp;lt;script src="./../ace/ace.js" type="text/javascript" charset="utf-8"&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src="./../ace/ext-language_tools.js" type="text/javascript" charset="utf-8"&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src="./../ace/mode-python3.js" type="text/javascript" charset="utf-8"&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src="./../ace/snippets/python.js" type="text/javascript" charset="utf-8"&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;script type="text/python3" id="script1"&amp;gt;
+import sys
+import time
+import traceback
+import javascript&lt;/p&gt;
+&lt;p&gt;from browser import document as doc, window, alert&lt;/p&gt;
+&lt;p&gt;has_ace = True
+try:
+    editor = window.ace.edit("editor")
+    session = editor.getSession()
+    session.setMode("ace/mode/python")&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;editor.setOptions({
+ &amp;#39;enableLiveAutocompletion&amp;#39;: True,
+ &amp;#39;enableSnippets&amp;#39;: True,
+ &amp;#39;highlightActiveLine&amp;#39;: False,
+ &amp;#39;highlightSelectedWord&amp;#39;: True
+})
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;except:
+    from browser import html
+    editor = html.TEXTAREA(rows=20, cols=70)
+    doc["editor"] &amp;lt;= editor
+    def get_value(): return editor.value
+    def set_value(x):editor.value = x
+    editor.getValue = get_value
+    editor.setValue = set_value
+    has_ace = False&lt;/p&gt;
+&lt;p&gt;if hasattr(window, 'localStorage'):
+    from browser.local_storage import storage
+else:
+    storage = None&lt;/p&gt;
+&lt;p&gt;def reset_src():
+    if storage is not None and "py_src" in storage:
+        editor.setValue(storage["py_src"])
+    else:
+        editor.setValue('for i in range(10):\n\tprint(i)')
+    editor.scrollToRow(0)
+    editor.gotoLine(0)&lt;/p&gt;
+&lt;p&gt;def reset_src_area():
+    if storage and "py_src" in storage:
+        editor.value = storage["py_src"]
+    else:
+        editor.value = 'for i in range(10):\n\tprint(i)'&lt;/p&gt;
+&lt;p&gt;class cOutput:&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;def __init__(self,target):
+    self.target = doc[target]
+def write(self,data):
+    self.target.value += str(data)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h1&gt;if "console" in doc:&lt;/h1&gt;
+&lt;p&gt;sys.stdout = cOutput("console")
+sys.stderr = cOutput("console")&lt;/p&gt;
+&lt;p&gt;def to_str(xx):
+    return str(xx)&lt;/p&gt;
+&lt;p&gt;info = sys.implementation.version
+doc['version'].text = 'Brython %s.%s.%s' % (info.major, info.minor, info.micro)&lt;/p&gt;
+&lt;p&gt;output = ''&lt;/p&gt;
+&lt;p&gt;def show_console(ev):
+    doc["console"].value = output
+    doc["console"].cols = 60
+    doc["console"].rows = 10&lt;/p&gt;
+&lt;h1&gt;load a Python script&lt;/h1&gt;
+&lt;p&gt;def load_script(evt):
+    _name = evt.target.value + '?foo=%s' % time.time()
+    editor.setValue(open(_name).read())&lt;/p&gt;
+&lt;h1&gt;run a script, in global namespace if in_globals is True&lt;/h1&gt;
+&lt;p&gt;def run(*args):
+    global output
+    doc["console"].value = ''
+    src = editor.getValue()
+    if storage is not None:
+       storage["py_src"] = src&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;t0 = time.perf_counter()
+try:
+    #ns = {&amp;#39;__name__&amp;#39;:&amp;#39;__main__&amp;#39;}
+    ns = {&amp;#39;__name__&amp;#39;:&amp;#39;editor&amp;#39;}
+    exec(src, ns)
+    state = 1
+except Exception as exc:
+    traceback.print_exc(file=sys.stderr)
+    state = 0
+output = doc[&amp;quot;console&amp;quot;].value
+
+print(&amp;#39;&amp;amp;lt;completed in %6.2f ms&amp;amp;gt;&amp;#39; % ((time.perf_counter() - t0) * 1000.0))
+return state
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;if has_ace:
+    reset_src()
+else:
+    reset_src_area()&lt;/p&gt;
+&lt;p&gt;def clear_console(ev):
+    doc["console"].value = ""&lt;/p&gt;
+&lt;p&gt;doc['run'].bind('click',run)
+doc['show_console'].bind('click',show_console)
+doc['clear_console'].bind('click',clear_console)
+&amp;lt;/script&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;div id="version"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;br /&amp;gt;
+&amp;lt;div id="editor" style="width:600px;height:300px;"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;br /&amp;gt;
+&amp;lt;form id="text-options"&amp;gt;
+    &amp;lt;label&amp;gt;Filename: &amp;lt;input type="text" class="filename" id="text-filename" placeholder="a plain document"/&amp;gt;.txt&amp;lt;/label&amp;gt;
+    &amp;lt;input type="submit" value="Save"/&amp;gt;
+&amp;lt;/form&amp;gt;
+&amp;lt;button id="run"&amp;gt;Run&amp;lt;/button&amp;gt;
+&amp;lt;button id="show_console"&amp;gt;Output&amp;lt;/button&amp;gt;
+&amp;lt;button id="clear_console"&amp;gt;清除&amp;lt;/button&amp;gt;
+&amp;lt;div style="width:100%;height:100%;"&amp;gt;
+&amp;lt;textarea id="console" autocomplete="off"&amp;gt;&amp;lt;/textarea&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;div id="common"&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/t&gt;
+&lt;t tx="yen.20161214173619.1"&gt;
+&amp;lt;!-- 請注意, 在 &amp;lt;script&amp;gt; 標註前一定要至少空一行 --&amp;gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+import script1&lt;/p&gt;
+&lt;p&gt;def ex3(ev):
+    script1.editor.setValue('''# this is a comment
+import math  # imports make code from other modules available&lt;/p&gt;
+&lt;h1&gt;code blocks are initiated by a trailing colon followed by indented lines&lt;/h1&gt;
+&lt;p&gt;class Circle:                          # define a class
+    def &lt;strong&gt;init&lt;/strong&gt;(self, radius):   # constructor with parameter radius
+        self.radius = radius      # store the parameter in a class variable&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;def get_area(self):            # define a function that belongs to the class
+    return math.pi*self.radius*self.radius
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h1&gt;code that is not in a class is executed immediately&lt;/h1&gt;
+&lt;p&gt;for i in range(1, 10):
+    # bitwise operation - https://wiki.python.org/moin/BitwiseOperators
+    if (i &amp;amp; 1) == 0:
+        continue
+    circle = Circle(i)              # create an instance
+    print("A circle with radius {0} has area {1:0.2f}".format(
+        i, circle.get_area()      # &lt;code&gt;print&lt;/code&gt; writes output to the console
+    ))
+    ''')
+    script1.editor.scrollToRow(0)
+    script1.editor.gotoLine(0)
+doc['ex3'].bind('click',ex3)
+&amp;lt;/script&amp;gt;
+&amp;lt;a id="ex3"&amp;gt;ex3&amp;lt;/a&amp;gt; - 基本的物件導向範例
+&lt;/t&gt;
+&lt;t tx="yen.20161214174443.1"&gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+import script1&lt;/p&gt;
+&lt;p&gt;def ex1(ev):
+    script1.editor.setValue('''for i in range(10):
+    print(i)
+    ''')
+    script1.editor.scrollToRow(0)
+    script1.editor.gotoLine(0)
+doc['ex1'].bind('click',ex1)
+&amp;lt;/script&amp;gt;&amp;lt;a id="ex1"&amp;gt;ex1&amp;lt;/a&amp;gt; - 簡單的 for 迴圈範例
+&lt;/t&gt;
+&lt;t tx="yen.20161214175500.1"&gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+import script1&lt;/p&gt;
+&lt;p&gt;def ex2(ev):
+    script1.editor.setValue('''#溫度轉換程式
+from browser import document as doc&lt;/p&gt;
+&lt;h1&gt;因為此函式與滑鼠互動, 需要 event 當作輸入&lt;/h1&gt;
+&lt;p&gt;def convTemp():
+    mystring = ""
+    cdegree = input("請輸入攝氏溫度:")
+    fdegree = float(cdegree)*9/5 + 32
+    output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度" 
+    # 利用 print() 將轉換結果送到 console 區
+    print(output_string)&lt;/p&gt;
+&lt;h1&gt;直接呼叫 convTemp() 執行&lt;/h1&gt;
+&lt;p&gt;convTemp()
+    ''')
+    script1.editor.scrollToRow(0)
+    script1.editor.gotoLine(0)
+doc['ex2'].bind('click',ex2)
+&amp;lt;/script&amp;gt;&amp;lt;a id="ex2"&amp;gt;ex2&amp;lt;/a&amp;gt; - input() 與函式定義進行溫度轉換&lt;/t&gt;
+&lt;t tx="yen.20161214183810.1"&gt;
+&amp;lt;script type="text/python3"&amp;gt;
+from browser import document as doc
+import script1&lt;/p&gt;
+&lt;p&gt;def ex4(ev):
+    script1.editor.setValue('''#ex4
+from browser.local_storage import storage&lt;/p&gt;
+&lt;h1&gt;列出 py_src 對應的儲存內容&lt;/h1&gt;
+&lt;p&gt;print(storage["py_src"])&lt;/p&gt;
+&lt;h1&gt;接著將要使用 FileSaver.js 將內容存在 local 區&lt;/h1&gt;
+&lt;h1&gt;https://github.com/eligrey/FileSaver.js/&lt;/h1&gt;
+&lt;h1&gt;https://eligrey.com/demos/FileSaver.js/&lt;/h1&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;#39;&amp;#39;&amp;#39;)
+script1.editor.scrollToRow(0)
+script1.editor.gotoLine(0)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;doc['ex4'].bind('click',ex4)
+&amp;lt;/script&amp;gt;&amp;lt;a id="ex4"&amp;gt;ex4&amp;lt;/a&amp;gt; - 將程式在近端存檔&lt;/t&gt;
+&lt;/tnodes&gt;
+&lt;/leo_file&gt;&lt;/p&gt;
+&lt;p&gt;以下為第十四週開始的城市練習,要利用 &lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 要整理Brython 的用法.
 &lt;/p&gt;
 &lt;!-- 導入 Brython 標準程式庫 --&gt;
 
@@ -288,7 +1257,410 @@ container &lt;= mystring
 &lt;p&gt;開始進行範例分配&lt;/p&gt;
 &lt;p&gt;接受使用者輸入&lt;/p&gt;
 &lt;p&gt;利用aler()顯示結果&lt;/p&gt;
-&lt;p&gt;直接列印結果&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>計算機程式 W14 範例整理</title><link href="./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html" rel="alternate"></link><published>2016-12-06T13:00:00+08:00</published><updated>2016-12-06T13:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-12-06:./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html</id><summary type="html">&lt;p&gt;本週的學習重點在導入 Leo Editor &lt;a href="http://leoeditor.com/tutorial-programming.html"&gt;@clean&lt;/a&gt; 節點指令的用法, 利用子節點管理各章節的範例, 逐一將程式改寫為 Brython 格式後, 直接在瀏覽器中執行. 讓學員了解使用階層式架構管理資料的便利性.&lt;/p&gt;
+&lt;p&gt;直接列印結果&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>計算機程式 W14 範例整理</title><link href="./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html" rel="alternate"></link><published>2016-12-06T13:00:00+08:00</published><updated>2016-12-06T13:00:00+08:00</updated><author><name>蕭志安</name></author><id>tag:,2016-12-06:./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html</id><summary type="html">&lt;p&gt;本週的學習重點在導入 Leo Editor &lt;a href="http://leoeditor.com/tutorial-programming.html"&gt;@clean&lt;/a&gt; 節點指令的用法, 利用子節點管理各章節的範例, 逐一將程式改寫為 Brython 格式後, 直接在瀏覽器中執行. 讓學員了解使用階層式架構管理資料的便利性.&lt;/p&gt;
+
+
+&lt;p&gt;以下為 &lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 中的 ch01 綜合範例, 其餘範例位於本 Leo Editor 專案檔中的 "Python3 程式範例" 節點, 請各組一一將範例程式碼與執行結果, 放入各學員的課程網誌中.&lt;/p&gt;
+&lt;p&gt;本課程 W15 - W18 週將利用 &lt;a href="./../course/introduction_to_prog_python3_2012.pdf"&gt;introduction_to_prog_python3_2012.pdf&lt;/a&gt; 與 &lt;a href="./../course/python_for_everybody_2015.pdf"&gt;python_for_everybody_2015.pdf&lt;/a&gt; 中有關物件導向的說明, 並且配合 &lt;a href="https://github.com/mdecourse/webgame"&gt;https://github.com/mdecourse/webgame&lt;/a&gt; 倉儲中的 Leo Editor 專案, 希望各組能夠了解利用 Python3 與 Brython 語法處理&lt;a href="http://mde.tw/webgame/bs.html"&gt;靜態圖檔&lt;/a&gt;、&lt;a href="http://mde.tw/webgame/bunny.html"&gt;動態圖檔&lt;/a&gt;與&lt;a href="http://mde.tw/webgame/spacewar.html"&gt;網際遊戲&lt;/a&gt;的運作原理, 順利完成各組的期末報告.&lt;/p&gt;
+&lt;!-- 導入 FileSaver --&gt;
+
+&lt;script type="text/javascript" src="./../FileSaver.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;!-- ch01 基本的列印與輸入函式 --&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import alert
+
+'''
+    # 利用 input() 取得使用者輸入, 然後進行資料處理或運算後, 列出結果
+    #01-01.py
+    print ("Hello World!")
+    #01-02.py
+    thetext = input("Enter some text ")
+    print ("This is what you entered:")
+    print (thetext)
+    #01-03.py
+    # Note that \n within quote marks forces a new line to be printed
+    thetext = input("Enter some text\n")
+    print ("This is what you entered:")
+    print (thetext)
+    #01-04.py
+    prompt  = "Enter a some text "
+    thetext = input(prompt)
+    print ("This is what you entered:")
+    print (thetext)
+'''
+
+def get_input(ev):
+    the_input= input("請輸入")
+    alert("輸入為:"+str(the_input))
+
+document['ch01'].bind('click',get_input)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="ch01"&gt;取輸入後, 列印出來&lt;/button&gt;&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import alert
+
+def get_input(ev):
+    the_input= input("請輸入")
+    alert("輸入為:"+str(the_input))
+
+document['ch01'].bind('click',get_input)
+&lt;/script&gt;
+&lt;button id="ch01"&gt;取輸入後, 列印出來&lt;/button&gt;
+&lt;/pre&gt;
+
+&lt;!-- 重複迴圈與 input() 練習 --&gt;
+
+&lt;div id="container"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+container = doc['container']
+
+def numPrint(ev):
+    mystring = ""
+    num = input("請輸入重複執行次數:")
+    #for i in range(1, 11):
+    for i in range(1, int(num)+1):
+        mystring += str(i) + ": hello mde" + html.BR()
+    container &lt;= mystring
+
+doc['w13'].bind('click',numPrint)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="w13"&gt;取重複執行次數後, 列印出來&lt;/button&gt;&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;div id="container"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+# 利用 document 根據 div 標註 id 設為 container 變數
+container = doc['container']
+
+# 因為此函式與滑鼠互動, 需要 event 當作輸入
+def numPrint(ev):
+    mystring = ""
+    num = input("請輸入重複執行次數:")
+    #for i in range(1, 11):
+    for i in range(1, int(num)+1):
+        mystring += str(i) + ": hello mde" + html.BR()
+    container &lt;= mystring
+
+# 與 id 為 'w13' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 numPrint 函式執行
+doc['w13'].bind('click',numPrint)
+&lt;/script&gt;
+&lt;button id="w13"&gt;取重複執行次數後, 列印出來&lt;/button&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;開始進行範例分類:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;接受使用者輸入, 然後利用 int() 或 str() 或 float() 函式轉為題目所需的資料型別
+input() 取回的資料為字串, 經過 int() 可以轉為整數
+若 num 變數內容為整數, 經過 str() 可以轉為字串, 然後再與其他字串進行結合後列印&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;練習: 編寫一個可以將使用者輸入的攝氏溫度, 轉為華氏溫度.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div id="temperature"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+# 利用 document 根據 div 標註 id 設為 container 變數
+container = doc['temperature']
+
+# 因為此函式與滑鼠互動, 需要 event 當作輸入
+def convTemp(event):
+    mystring = ""
+    cdegree = input("請輸入攝氏溫度:")
+    fdegree = float(cdegree)*9/5 + 32
+    output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度" + html.BR()
+    container &lt;= output_string
+
+# 與 id 為 'w13-1' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 convTemp 函式執行
+doc['w13-1'].bind('click',convTemp)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="w13-1"&gt;取攝氏溫度, 轉為華氏溫度&lt;/button&gt;&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;div id="temperature"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+# 利用 document 根據 div 標註 id 設為 container 變數
+container = doc['temperature']
+
+# 因為此函式與滑鼠互動, 需要 event 當作輸入
+def convTemp(event):
+    mystring = ""
+    cdegree = input("請輸入攝氏溫度:")
+    fdegree = float(cdegree)*9/5 + 32
+    output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度" + html.BR()
+    container &lt;= output_string
+
+# 與 id 為 'w13-1' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 convTemp 函式執行
+doc['w13-1'].bind('click',convTemp)
+&lt;/script&gt;
+&lt;button id="w13-1"&gt;取攝氏溫度, 轉為華氏溫度&lt;/button&gt;
+&lt;/pre&gt;
+
+&lt;script src="./../ace/ace.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;script src="./../ace/ext-language_tools.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;script src="./../ace/mode-python3.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;script src="./../ace/snippets/python.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;script type="text/python3" id="script1"&gt;
+import sys
+import time
+import traceback
+import javascript
+
+from browser import document as doc, window, alert
+
+has_ace = True
+try:
+    editor = window.ace.edit("editor")
+    session = editor.getSession()
+    session.setMode("ace/mode/python")
+
+    editor.setOptions({
+     'enableLiveAutocompletion': True,
+     'enableSnippets': True,
+     'highlightActiveLine': False,
+     'highlightSelectedWord': True
+    })
+except:
+    from browser import html
+    editor = html.TEXTAREA(rows=20, cols=70)
+    doc["editor"] &lt;= editor
+    def get_value(): return editor.value
+    def set_value(x):editor.value = x
+    editor.getValue = get_value
+    editor.setValue = set_value
+    has_ace = False
+
+if hasattr(window, 'localStorage'):
+    from browser.local_storage import storage
+else:
+    storage = None
+
+def reset_src():
+    if storage is not None and "py_src" in storage:
+        editor.setValue(storage["py_src"])
+    else:
+        editor.setValue('for i in range(10):\n\tprint(i)')
+    editor.scrollToRow(0)
+    editor.gotoLine(0)
+
+def reset_src_area():
+    if storage and "py_src" in storage:
+        editor.value = storage["py_src"]
+    else:
+        editor.value = 'for i in range(10):\n\tprint(i)'
+
+class cOutput:
+
+    def __init__(self,target):
+        self.target = doc[target]
+    def write(self,data):
+        self.target.value += str(data)
+
+
+#if "console" in doc:
+sys.stdout = cOutput("console")
+sys.stderr = cOutput("console")
+
+def to_str(xx):
+    return str(xx)
+
+info = sys.implementation.version
+doc['version'].text = 'Brython %s.%s.%s' % (info.major, info.minor, info.micro)
+
+output = ''
+
+def show_console(ev):
+    doc["console"].value = output
+    doc["console"].cols = 60
+    doc["console"].rows = 10
+
+# load a Python script
+def load_script(evt):
+    _name = evt.target.value + '?foo=%s' % time.time()
+    editor.setValue(open(_name).read())
+
+# run a script, in global namespace if in_globals is True
+def run(*args):
+    global output
+    doc["console"].value = ''
+    src = editor.getValue()
+    if storage is not None:
+       storage["py_src"] = src
+
+    t0 = time.perf_counter()
+    try:
+        #ns = {'__name__':'__main__'}
+        ns = {'__name__':'editor'}
+        exec(src, ns)
+        state = 1
+    except Exception as exc:
+        traceback.print_exc(file=sys.stderr)
+        state = 0
+    output = doc["console"].value
+
+    print('&lt;completed in %6.2f ms&gt;' % ((time.perf_counter() - t0) * 1000.0))
+    return state
+
+if has_ace:
+    reset_src()
+else:
+    reset_src_area()
+
+def clear_console(ev):
+    doc["console"].value = ""
+
+doc['run'].bind('click',run)
+doc['show_console'].bind('click',show_console)
+doc['clear_console'].bind('click',clear_console)
+&lt;/script&gt;
+
+&lt;div id="version"&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;div id="editor" style="width:600px;height:300px;"&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;form id="text-options"&gt;
+    &lt;label&gt;Filename: &lt;input type="text" class="filename" id="text-filename" placeholder="a plain document"/&gt;.txt&lt;/label&gt;
+    &lt;input type="submit" value="Save"/&gt;
+&lt;/form&gt;
+&lt;button id="run"&gt;Run&lt;/button&gt;
+&lt;button id="show_console"&gt;Output&lt;/button&gt;
+&lt;button id="clear_console"&gt;清除&lt;/button&gt;
+&lt;div style="width:100%;height:100%;"&gt;
+&lt;textarea id="console" autocomplete="off"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;div id="common"&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import script1
+
+def ex1(ev):
+    script1.editor.setValue('''for i in range(10):
+    print(i)
+    ''')
+    script1.editor.scrollToRow(0)
+    script1.editor.gotoLine(0)
+doc['ex1'].bind('click',ex1)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;a id="ex1"&gt;ex1&lt;/a&gt; - 簡單的 for 迴圈範例&lt;/p&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import script1
+
+def ex2(ev):
+    script1.editor.setValue('''#溫度轉換程式
+from browser import document as doc
+
+# 因為此函式與滑鼠互動, 需要 event 當作輸入
+def convTemp():
+    mystring = ""
+    cdegree = input("請輸入攝氏溫度:")
+    fdegree = float(cdegree)*9/5 + 32
+    output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度" 
+    # 利用 print() 將轉換結果送到 console 區
+    print(output_string)
+
+#直接呼叫 convTemp() 執行
+convTemp()
+    ''')
+    script1.editor.scrollToRow(0)
+    script1.editor.gotoLine(0)
+doc['ex2'].bind('click',ex2)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;a id="ex2"&gt;ex2&lt;/a&gt; - input() 與函式定義進行溫度轉換&lt;/p&gt;
+&lt;!-- 請注意, 在 &lt;script&gt; 標註前一定要至少空一行 --&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import script1
+
+def ex3(ev):
+    script1.editor.setValue('''# this is a comment
+import math  # imports make code from other modules available
+
+# code blocks are initiated by a trailing colon followed by indented lines
+class Circle:                          # define a class
+    def __init__(self, radius):   # constructor with parameter radius
+        self.radius = radius      # store the parameter in a class variable
+
+    def get_area(self):            # define a function that belongs to the class
+        return math.pi*self.radius*self.radius
+
+# code that is not in a class is executed immediately
+for i in range(1, 10):
+    # bitwise operation - https://wiki.python.org/moin/BitwiseOperators
+    if (i &amp; 1) == 0:
+        continue
+    circle = Circle(i)              # create an instance
+    print("A circle with radius {0} has area {1:0.2f}".format(
+        i, circle.get_area()      # `print` writes output to the console
+    ))
+    ''')
+    script1.editor.scrollToRow(0)
+    script1.editor.gotoLine(0)
+doc['ex3'].bind('click',ex3)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;a id="ex3"&gt;ex3&lt;/a&gt; - 基本的物件導向範例&lt;/p&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import script1
+
+def ex4(ev):
+    script1.editor.setValue('''#ex4
+from browser.local_storage import storage
+# 列出 py_src 對應的儲存內容
+print(storage["py_src"])
+# 接著將要使用 FileSaver.js 將內容存在 local 區
+# https://github.com/eligrey/FileSaver.js/
+# https://eligrey.com/demos/FileSaver.js/
+    ''')
+    script1.editor.scrollToRow(0)
+    script1.editor.gotoLine(0)
+doc['ex4'].bind('click',ex4)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;a id="ex4"&gt;ex4&lt;/a&gt; - 將程式在近端存檔
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import alert
+&lt;/script&gt;&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>計算機程式 W14 範例整理</title><link href="./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html" rel="alternate"></link><published>2016-12-06T13:00:00+08:00</published><updated>2016-12-06T13:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-12-06:./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html</id><summary type="html">&lt;p&gt;本週的學習重點在導入 Leo Editor &lt;a href="http://leoeditor.com/tutorial-programming.html"&gt;@clean&lt;/a&gt; 節點指令的用法, 利用子節點管理各章節的範例, 逐一將程式改寫為 Brython 格式後, 直接在瀏覽器中執行. 讓學員了解使用階層式架構管理資料的便利性.&lt;/p&gt;
 
 
 &lt;p&gt;以下為 &lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 中的 ch01 綜合範例, 其餘範例位於本 Leo Editor 專案檔中的 "Python3 程式範例" 節點, 請各組一一將範例程式碼與執行結果, 放入各學員的課程網誌中.&lt;/p&gt;
@@ -345,6 +1717,812 @@ document['ch01'].bind('click',get_input)
 &lt;/script&gt;
 
 &lt;p&gt;&lt;button id="ch01"&gt;40523137&lt;/button&gt;&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import alert
+
+def get_input(ev):
+    the_input= input("請輸入")
+    alert("輸入為:"+str(the_input))
+
+document['ch01'].bind('click',get_input)
+&lt;/script&gt;
+&lt;button id="ch01"&gt;取輸入後, 列印出來&lt;/button&gt;
+&lt;/pre&gt;
+
+&lt;!-- 重複迴圈與 input() 練習 --&gt;
+
+&lt;div id="container"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+container = doc['container']
+
+def numPrint(ev):
+    mystring = ""
+    num = input("請輸入重複執行次數:")
+    #for i in range(1, 11):
+    for i in range(1, int(num)+1):
+        mystring += str(i) + ": hello mde" + html.BR()
+    container &lt;= mystring
+
+doc['w13'].bind('click',numPrint)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="w13"&gt;取重複執行次數後, 列印出來&lt;/button&gt;&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;div id="container"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+# 利用 document 根據 div 標註 id 設為 container 變數
+container = doc['container']
+
+# 因為此函式與滑鼠互動, 需要 event 當作輸入
+def numPrint(ev):
+    mystring = ""
+    num = input("請輸入重複執行次數:")
+    #for i in range(1, 11):
+    for i in range(1, int(num)+1):
+        mystring += str(i) + ": hello mde" + html.BR()
+    container &lt;= mystring
+
+# 與 id 為 'w13' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 numPrint 函式執行
+doc['w13'].bind('click',numPrint)
+&lt;/script&gt;
+&lt;button id="w13"&gt;取重複執行次數後, 列印出來&lt;/button&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;開始進行範例分類:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;接受使用者輸入, 然後利用 int() 或 str() 或 float() 函式轉為題目所需的資料型別
+input() 取回的資料為字串, 經過 int() 可以轉為整數
+若 num 變數內容為整數, 經過 str() 可以轉為字串, 然後再與其他字串進行結合後列印&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;練習: 編寫一個可以將使用者輸入的攝氏溫度, 轉為華氏溫度.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div id="temperature"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+# 利用 document 根據 div 標註 id 設為 container 變數
+container = doc['temperature']
+
+# 因為此函式與滑鼠互動, 需要 event 當作輸入
+def convTemp(event):
+    mystring = ""
+    cdegree = input("請輸入攝氏溫度:")
+    fdegree = float(cdegree)*9/5 + 32
+    output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度" + html.BR()
+    container &lt;= output_string
+
+# 與 id 為 'w13-1' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 convTemp 函式執行
+doc['w13-1'].bind('click',convTemp)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="w13-1"&gt;取攝氏溫度, 轉為華氏溫度&lt;/button&gt;&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;div id="temperature"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+# 利用 document 根據 div 標註 id 設為 container 變數
+container = doc['temperature']
+
+# 因為此函式與滑鼠互動, 需要 event 當作輸入
+def convTemp(event):
+    mystring = ""
+    cdegree = input("請輸入攝氏溫度:")
+    fdegree = float(cdegree)*9/5 + 32
+    output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度" + html.BR()
+    container &lt;= output_string
+
+# 與 id 為 'w13-1' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 convTemp 函式執行
+doc['w13-1'].bind('click',convTemp)
+&lt;/script&gt;
+&lt;button id="w13-1"&gt;取攝氏溫度, 轉為華氏溫度&lt;/button&gt;
+&lt;/pre&gt;
+
+&lt;script src="./../ace/ace.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;script src="./../ace/ext-language_tools.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;script src="./../ace/mode-python3.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;script src="./../ace/snippets/python.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;script type="text/python3" id="script1"&gt;
+import sys
+import time
+import traceback
+import javascript
+
+from browser import document as doc, window, alert
+
+has_ace = True
+try:
+    editor = window.ace.edit("editor")
+    session = editor.getSession()
+    session.setMode("ace/mode/python")
+
+    editor.setOptions({
+     'enableLiveAutocompletion': True,
+     'enableSnippets': True,
+     'highlightActiveLine': False,
+     'highlightSelectedWord': True
+    })
+except:
+    from browser import html
+    editor = html.TEXTAREA(rows=20, cols=70)
+    doc["editor"] &lt;= editor
+    def get_value(): return editor.value
+    def set_value(x):editor.value = x
+    editor.getValue = get_value
+    editor.setValue = set_value
+    has_ace = False
+
+if hasattr(window, 'localStorage'):
+    from browser.local_storage import storage
+else:
+    storage = None
+
+def reset_src():
+    if storage is not None and "py_src" in storage:
+        editor.setValue(storage["py_src"])
+    else:
+        editor.setValue('for i in range(10):\n\tprint(i)')
+    editor.scrollToRow(0)
+    editor.gotoLine(0)
+
+def reset_src_area():
+    if storage and "py_src" in storage:
+        editor.value = storage["py_src"]
+    else:
+        editor.value = 'for i in range(10):\n\tprint(i)'
+
+class cOutput:
+
+    def __init__(self,target):
+        self.target = doc[target]
+    def write(self,data):
+        self.target.value += str(data)
+
+
+#if "console" in doc:
+sys.stdout = cOutput("console")
+sys.stderr = cOutput("console")
+
+def to_str(xx):
+    return str(xx)
+
+info = sys.implementation.version
+doc['version'].text = 'Brython %s.%s.%s' % (info.major, info.minor, info.micro)
+
+output = ''
+
+def show_console(ev):
+    doc["console"].value = output
+    doc["console"].cols = 60
+    doc["console"].rows = 10
+
+# load a Python script
+def load_script(evt):
+    _name = evt.target.value + '?foo=%s' % time.time()
+    editor.setValue(open(_name).read())
+
+# run a script, in global namespace if in_globals is True
+def run(*args):
+    global output
+    doc["console"].value = ''
+    src = editor.getValue()
+    if storage is not None:
+       storage["py_src"] = src
+
+    t0 = time.perf_counter()
+    try:
+        #ns = {'__name__':'__main__'}
+        ns = {'__name__':'editor'}
+        exec(src, ns)
+        state = 1
+    except Exception as exc:
+        traceback.print_exc(file=sys.stderr)
+        state = 0
+    output = doc["console"].value
+
+    print('&lt;completed in %6.2f ms&gt;' % ((time.perf_counter() - t0) * 1000.0))
+    return state
+
+if has_ace:
+    reset_src()
+else:
+    reset_src_area()
+
+def clear_console(ev):
+    doc["console"].value = ""
+
+doc['run'].bind('click',run)
+doc['show_console'].bind('click',show_console)
+doc['clear_console'].bind('click',clear_console)
+&lt;/script&gt;
+
+&lt;div id="version"&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;div id="editor" style="width:600px;height:300px;"&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;form id="text-options"&gt;
+    &lt;label&gt;Filename: &lt;input type="text" class="filename" id="text-filename" placeholder="a plain document"/&gt;.txt&lt;/label&gt;
+    &lt;input type="submit" value="Save"/&gt;
+&lt;/form&gt;
+&lt;button id="run"&gt;Run&lt;/button&gt;
+&lt;button id="show_console"&gt;Output&lt;/button&gt;
+&lt;button id="clear_console"&gt;清除&lt;/button&gt;
+&lt;div style="width:100%;height:100%;"&gt;
+&lt;textarea id="console" autocomplete="off"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;div id="common"&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import script1
+
+def ex1(ev):
+    script1.editor.setValue('''for i in range(10):
+    print(i)
+    ''')
+    script1.editor.scrollToRow(0)
+    script1.editor.gotoLine(0)
+doc['ex1'].bind('click',ex1)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;a id="ex1"&gt;ex1&lt;/a&gt; - 簡單的 for 迴圈範例&lt;/p&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import script1
+
+def ex2(ev):
+    script1.editor.setValue('''#溫度轉換程式
+from browser import document as doc
+
+# 因為此函式與滑鼠互動, 需要 event 當作輸入
+def convTemp():
+    mystring = ""
+    cdegree = input("請輸入攝氏溫度:")
+    fdegree = float(cdegree)*9/5 + 32
+    output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度" 
+    # 利用 print() 將轉換結果送到 console 區
+    print(output_string)
+
+#直接呼叫 convTemp() 執行
+convTemp()
+    ''')
+    script1.editor.scrollToRow(0)
+    script1.editor.gotoLine(0)
+doc['ex2'].bind('click',ex2)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;a id="ex2"&gt;ex2&lt;/a&gt; - input() 與函式定義進行溫度轉換&lt;/p&gt;
+&lt;!-- 請注意, 在 &lt;script&gt; 標註前一定要至少空一行 --&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import script1
+
+def ex3(ev):
+    script1.editor.setValue('''# this is a comment
+import math  # imports make code from other modules available
+
+# code blocks are initiated by a trailing colon followed by indented lines
+class Circle:                          # define a class
+    def __init__(self, radius):   # constructor with parameter radius
+        self.radius = radius      # store the parameter in a class variable
+
+    def get_area(self):            # define a function that belongs to the class
+        return math.pi*self.radius*self.radius
+
+# code that is not in a class is executed immediately
+for i in range(1, 10):
+    # bitwise operation - https://wiki.python.org/moin/BitwiseOperators
+    if (i &amp; 1) == 0:
+        continue
+    circle = Circle(i)              # create an instance
+    print("A circle with radius {0} has area {1:0.2f}".format(
+        i, circle.get_area()      # `print` writes output to the console
+    ))
+    ''')
+    script1.editor.scrollToRow(0)
+    script1.editor.gotoLine(0)
+doc['ex3'].bind('click',ex3)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;a id="ex3"&gt;ex3&lt;/a&gt; - 基本的物件導向範例&lt;/p&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import script1
+
+def ex4(ev):
+    script1.editor.setValue('''#ex4
+from browser.local_storage import storage
+# 列出 py_src 對應的儲存內容
+print(storage["py_src"])
+# 接著將要使用 FileSaver.js 將內容存在 local 區
+# https://github.com/eligrey/FileSaver.js/
+# https://eligrey.com/demos/FileSaver.js/
+    ''')
+    script1.editor.scrollToRow(0)
+    script1.editor.gotoLine(0)
+doc['ex4'].bind('click',ex4)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;a id="ex4"&gt;ex4&lt;/a&gt; - 將程式在近端存檔
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import alert
+&lt;/script&gt;&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>計算機程式 W14 範例整理</title><link href="./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html" rel="alternate"></link><published>2016-12-06T13:00:00+08:00</published><updated>2016-12-06T13:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-12-06:./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html</id><summary type="html">&lt;p&gt;本週的學習重點在導入 Leo Editor &lt;a href="http://leoeditor.com/tutorial-programming.html"&gt;@clean&lt;/a&gt; 節點指令的用法, 利用子節點管理各章節的範例, 逐一將程式改寫為 Brython 格式後, 直接在瀏覽器中執行. 讓學員了解使用階層式架構管理資料的便利性.&lt;/p&gt;
+
+
+&lt;p&gt;以下為 &lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 中的 ch01 綜合範例, 其餘範例位於本 Leo Editor 專案檔中的 "Python3 程式範例" 節點, 請各組一一將範例程式碼與執行結果, 放入各學員的課程網誌中.&lt;/p&gt;
+&lt;p&gt;本課程 W15 - W18 週將利用 &lt;a href="./../course/introduction_to_prog_python3_2012.pdf"&gt;introduction_to_prog_python3_2012.pdf&lt;/a&gt; 與 &lt;a href="./../course/python_for_everybody_2015.pdf"&gt;python_for_everybody_2015.pdf&lt;/a&gt; 中有關物件導向的說明, 並且配合 &lt;a href="https://github.com/mdecourse/webgame"&gt;https://github.com/mdecourse/webgame&lt;/a&gt; 倉儲中的 Leo Editor 專案, 希望各組能夠了解利用 Python3 與 Brython 語法處理&lt;a href="http://mde.tw/webgame/bs.html"&gt;靜態圖檔&lt;/a&gt;、&lt;a href="http://mde.tw/webgame/bunny.html"&gt;動態圖檔&lt;/a&gt;與&lt;a href="http://mde.tw/webgame/spacewar.html"&gt;網際遊戲&lt;/a&gt;的運作原理, 順利完成各組的期末報告.&lt;/p&gt;
+&lt;!-- 導入 FileSaver --&gt;
+
+&lt;script type="text/javascript" src="./../FileSaver.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;!-- ch01 基本的列印與輸入函式 --&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import alert
+
+'''
+    # 利用 input() 取得使用者輸入, 然後進行資料處理或運算後, 列出結果
+    #01-01.py
+    print ("Hello World!")
+    #01-02.py
+    thetext = input("Enter some text ")
+    print ("This is what you entered:")
+    print (thetext)
+    #01-03.py
+    # Note that \n within quote marks forces a new line to be printed
+    thetext = input("Enter some text\n")
+    print ("This is what you entered:")
+    print (thetext)
+    #01-04.py
+    prompt  = "Enter a some text "
+    thetext = input(prompt)
+    print ("This is what you entered:")
+    print (thetext)
+'''
+
+def get_input(ev):
+    the_input= input("上課不會滑手機")
+    alert("上課不會滑手機:"+str(the_input))
+
+document['ch01'].bind('click',get_input)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="ch01"&gt;40523137&lt;/button&gt;&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import alert
+
+def get_input(ev):
+    the_input= input("請輸入")
+    alert("輸入為:"+str(the_input))
+
+document['ch01'].bind('click',get_input)
+&lt;/script&gt;
+&lt;button id="ch01"&gt;取輸入後, 列印出來&lt;/button&gt;
+&lt;/pre&gt;
+
+&lt;!-- 重複迴圈與 input() 練習 --&gt;
+
+&lt;div id="container"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+container = doc['container']
+
+def numPrint(ev):
+    mystring = ""
+    num = input("請輸入重複執行次數:")
+    #for i in range(1, 11):
+    for i in range(1, int(num)+1):
+        mystring += str(i) + ": hello mde" + html.BR()
+    container &lt;= mystring
+
+doc['w13'].bind('click',numPrint)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="w13"&gt;取重複執行次數後, 列印出來&lt;/button&gt;&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;div id="container"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+# 利用 document 根據 div 標註 id 設為 container 變數
+container = doc['container']
+
+# 因為此函式與滑鼠互動, 需要 event 當作輸入
+def numPrint(ev):
+    mystring = ""
+    num = input("請輸入重複執行次數:")
+    #for i in range(1, 11):
+    for i in range(1, int(num)+1):
+        mystring += str(i) + ": hello mde" + html.BR()
+    container &lt;= mystring
+
+# 與 id 為 'w13' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 numPrint 函式執行
+doc['w13'].bind('click',numPrint)
+&lt;/script&gt;
+&lt;button id="w13"&gt;取重複執行次數後, 列印出來&lt;/button&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;開始進行範例分類:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;接受使用者輸入, 然後利用 int() 或 str() 或 float() 函式轉為題目所需的資料型別
+input() 取回的資料為字串, 經過 int() 可以轉為整數
+若 num 變數內容為整數, 經過 str() 可以轉為字串, 然後再與其他字串進行結合後列印&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;練習: 編寫一個可以將使用者輸入的攝氏溫度, 轉為華氏溫度.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div id="temperature"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+# 利用 document 根據 div 標註 id 設為 container 變數
+container = doc['temperature']
+
+# 因為此函式與滑鼠互動, 需要 event 當作輸入
+def convTemp(event):
+    mystring = ""
+    cdegree = input("請輸入攝氏溫度:")
+    fdegree = float(cdegree)*9/5 + 32
+    output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度" + html.BR()
+    container &lt;= output_string
+
+# 與 id 為 'w13-1' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 convTemp 函式執行
+doc['w13-1'].bind('click',convTemp)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="w13-1"&gt;取攝氏溫度, 轉為華氏溫度&lt;/button&gt;&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;div id="temperature"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+# 利用 document 根據 div 標註 id 設為 container 變數
+container = doc['temperature']
+
+# 因為此函式與滑鼠互動, 需要 event 當作輸入
+def convTemp(event):
+    mystring = ""
+    cdegree = input("請輸入攝氏溫度:")
+    fdegree = float(cdegree)*9/5 + 32
+    output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度" + html.BR()
+    container &lt;= output_string
+
+# 與 id 為 'w13-1' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 convTemp 函式執行
+doc['w13-1'].bind('click',convTemp)
+&lt;/script&gt;
+&lt;button id="w13-1"&gt;取攝氏溫度, 轉為華氏溫度&lt;/button&gt;
+&lt;/pre&gt;
+
+&lt;script src="./../ace/ace.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;script src="./../ace/ext-language_tools.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;script src="./../ace/mode-python3.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;script src="./../ace/snippets/python.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;script type="text/python3" id="script1"&gt;
+import sys
+import time
+import traceback
+import javascript
+
+from browser import document as doc, window, alert
+
+has_ace = True
+try:
+    editor = window.ace.edit("editor")
+    session = editor.getSession()
+    session.setMode("ace/mode/python")
+
+    editor.setOptions({
+     'enableLiveAutocompletion': True,
+     'enableSnippets': True,
+     'highlightActiveLine': False,
+     'highlightSelectedWord': True
+    })
+except:
+    from browser import html
+    editor = html.TEXTAREA(rows=20, cols=70)
+    doc["editor"] &lt;= editor
+    def get_value(): return editor.value
+    def set_value(x):editor.value = x
+    editor.getValue = get_value
+    editor.setValue = set_value
+    has_ace = False
+
+if hasattr(window, 'localStorage'):
+    from browser.local_storage import storage
+else:
+    storage = None
+
+def reset_src():
+    if storage is not None and "py_src" in storage:
+        editor.setValue(storage["py_src"])
+    else:
+        editor.setValue('for i in range(10):\n\tprint(i)')
+    editor.scrollToRow(0)
+    editor.gotoLine(0)
+
+def reset_src_area():
+    if storage and "py_src" in storage:
+        editor.value = storage["py_src"]
+    else:
+        editor.value = 'for i in range(10):\n\tprint(i)'
+
+class cOutput:
+
+    def __init__(self,target):
+        self.target = doc[target]
+    def write(self,data):
+        self.target.value += str(data)
+
+
+#if "console" in doc:
+sys.stdout = cOutput("console")
+sys.stderr = cOutput("console")
+
+def to_str(xx):
+    return str(xx)
+
+info = sys.implementation.version
+doc['version'].text = 'Brython %s.%s.%s' % (info.major, info.minor, info.micro)
+
+output = ''
+
+def show_console(ev):
+    doc["console"].value = output
+    doc["console"].cols = 60
+    doc["console"].rows = 10
+
+# load a Python script
+def load_script(evt):
+    _name = evt.target.value + '?foo=%s' % time.time()
+    editor.setValue(open(_name).read())
+
+# run a script, in global namespace if in_globals is True
+def run(*args):
+    global output
+    doc["console"].value = ''
+    src = editor.getValue()
+    if storage is not None:
+       storage["py_src"] = src
+
+    t0 = time.perf_counter()
+    try:
+        #ns = {'__name__':'__main__'}
+        ns = {'__name__':'editor'}
+        exec(src, ns)
+        state = 1
+    except Exception as exc:
+        traceback.print_exc(file=sys.stderr)
+        state = 0
+    output = doc["console"].value
+
+    print('&lt;completed in %6.2f ms&gt;' % ((time.perf_counter() - t0) * 1000.0))
+    return state
+
+if has_ace:
+    reset_src()
+else:
+    reset_src_area()
+
+def clear_console(ev):
+    doc["console"].value = ""
+
+doc['run'].bind('click',run)
+doc['show_console'].bind('click',show_console)
+doc['clear_console'].bind('click',clear_console)
+&lt;/script&gt;
+
+&lt;div id="version"&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;div id="editor" style="width:600px;height:300px;"&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;form id="text-options"&gt;
+    &lt;label&gt;Filename: &lt;input type="text" class="filename" id="text-filename" placeholder="a plain document"/&gt;.txt&lt;/label&gt;
+    &lt;input type="submit" value="Save"/&gt;
+&lt;/form&gt;
+&lt;button id="run"&gt;Run&lt;/button&gt;
+&lt;button id="show_console"&gt;Output&lt;/button&gt;
+&lt;button id="clear_console"&gt;清除&lt;/button&gt;
+&lt;div style="width:100%;height:100%;"&gt;
+&lt;textarea id="console" autocomplete="off"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;div id="common"&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import script1
+
+def ex1(ev):
+    script1.editor.setValue('''for i in range(10):
+    print(i)
+    ''')
+    script1.editor.scrollToRow(0)
+    script1.editor.gotoLine(0)
+doc['ex1'].bind('click',ex1)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;a id="ex1"&gt;ex1&lt;/a&gt; - 簡單的 for 迴圈範例&lt;/p&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import script1
+
+def ex2(ev):
+    script1.editor.setValue('''#溫度轉換程式
+from browser import document as doc
+
+# 因為此函式與滑鼠互動, 需要 event 當作輸入
+def convTemp():
+    mystring = ""
+    cdegree = input("請輸入攝氏溫度:")
+    fdegree = float(cdegree)*9/5 + 32
+    output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度" 
+    # 利用 print() 將轉換結果送到 console 區
+    print(output_string)
+
+#直接呼叫 convTemp() 執行
+convTemp()
+    ''')
+    script1.editor.scrollToRow(0)
+    script1.editor.gotoLine(0)
+doc['ex2'].bind('click',ex2)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;a id="ex2"&gt;ex2&lt;/a&gt; - input() 與函式定義進行溫度轉換&lt;/p&gt;
+&lt;!-- 請注意, 在 &lt;script&gt; 標註前一定要至少空一行 --&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import script1
+
+def ex3(ev):
+    script1.editor.setValue('''# this is a comment
+import math  # imports make code from other modules available
+
+# code blocks are initiated by a trailing colon followed by indented lines
+class Circle:                          # define a class
+    def __init__(self, radius):   # constructor with parameter radius
+        self.radius = radius      # store the parameter in a class variable
+
+    def get_area(self):            # define a function that belongs to the class
+        return math.pi*self.radius*self.radius
+
+# code that is not in a class is executed immediately
+for i in range(1, 10):
+    # bitwise operation - https://wiki.python.org/moin/BitwiseOperators
+    if (i &amp; 1) == 0:
+        continue
+    circle = Circle(i)              # create an instance
+    print("A circle with radius {0} has area {1:0.2f}".format(
+        i, circle.get_area()      # `print` writes output to the console
+    ))
+    ''')
+    script1.editor.scrollToRow(0)
+    script1.editor.gotoLine(0)
+doc['ex3'].bind('click',ex3)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;a id="ex3"&gt;ex3&lt;/a&gt; - 基本的物件導向範例&lt;/p&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import script1
+
+def ex4(ev):
+    script1.editor.setValue('''#ex4
+from browser.local_storage import storage
+# 列出 py_src 對應的儲存內容
+print(storage["py_src"])
+# 接著將要使用 FileSaver.js 將內容存在 local 區
+# https://github.com/eligrey/FileSaver.js/
+# https://eligrey.com/demos/FileSaver.js/
+    ''')
+    script1.editor.scrollToRow(0)
+    script1.editor.gotoLine(0)
+doc['ex4'].bind('click',ex4)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;a id="ex4"&gt;ex4&lt;/a&gt; - 將程式在近端存檔
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import alert
+&lt;/script&gt;&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>計算機程式 W14 範例整理</title><link href="./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html" rel="alternate"></link><published>2016-12-06T13:00:00+08:00</published><updated>2016-12-06T13:00:00+08:00</updated><author><name>蕭志安</name></author><id>tag:,2016-12-06:./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html</id><summary type="html">&lt;p&gt;本週的學習重點在導入 Leo Editor &lt;a href="http://leoeditor.com/tutorial-programming.html"&gt;@clean&lt;/a&gt; 節點指令的用法, 利用子節點管理各章節的範例, 逐一將程式改寫為 Brython 格式後, 直接在瀏覽器中執行. 讓學員了解使用階層式架構管理資料的便利性.&lt;/p&gt;
+
+
+&lt;p&gt;以下為 &lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 中的 ch01 綜合範例, 其餘範例位於本 Leo Editor 專案檔中的 "Python3 程式範例" 節點, 請各組一一將範例程式碼與執行結果, 放入各學員的課程網誌中.&lt;/p&gt;
+&lt;p&gt;本課程 W15 - W18 週將利用 &lt;a href="./../course/introduction_to_prog_python3_2012.pdf"&gt;introduction_to_prog_python3_2012.pdf&lt;/a&gt; 與 &lt;a href="./../course/python_for_everybody_2015.pdf"&gt;python_for_everybody_2015.pdf&lt;/a&gt; 中有關物件導向的說明, 並且配合 &lt;a href="https://github.com/mdecourse/webgame"&gt;https://github.com/mdecourse/webgame&lt;/a&gt; 倉儲中的 Leo Editor 專案, 希望各組能夠了解利用 Python3 與 Brython 語法處理&lt;a href="http://mde.tw/webgame/bs.html"&gt;靜態圖檔&lt;/a&gt;、&lt;a href="http://mde.tw/webgame/bunny.html"&gt;動態圖檔&lt;/a&gt;與&lt;a href="http://mde.tw/webgame/spacewar.html"&gt;網際遊戲&lt;/a&gt;的運作原理, 順利完成各組的期末報告.&lt;/p&gt;
+&lt;!-- 導入 FileSaver --&gt;
+
+&lt;script type="text/javascript" src="./../FileSaver.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;!-- ch01 基本的列印與輸入函式 --&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import alert
+
+'''
+    # 利用 input() 取得使用者輸入, 然後進行資料處理或運算後, 列出結果
+    #01-01.py
+    print ("Hello World!")
+    #01-02.py
+    thetext = input("Enter some text ")
+    print ("This is what you entered:")
+    print (thetext)
+    #01-03.py
+    # Note that \n within quote marks forces a new line to be printed
+    thetext = input("Enter some text\n")
+    print ("This is what you entered:")
+    print (thetext)
+    #01-04.py
+    prompt  = "Enter a some text "
+    thetext = input(prompt)
+    print ("This is what you entered:")
+    print (thetext)
+'''
+
+def get_input(ev):
+    the_input= input("請輸入")
+    alert("輸入為:"+str(the_input))
+
+document['ch01'].bind('click',get_input)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="ch01"&gt;取輸入後, 列印出來&lt;/button&gt;&lt;/p&gt;
 &lt;pre class="brush: python"&gt;
 &lt;script type="text/python3"&gt;
 from browser import document
@@ -855,7 +3033,1846 @@ for s in mylist:
     num = num + 1
 &lt;/script&gt;
 
-&lt;/pre&gt;</summary><category term="Brython"></category></entry><entry><title>W10 Brython 繪圖範例</title><link href="./w10-brython-hui-tu-fan-li.html" rel="alternate"></link><published>2016-11-14T12:00:00+08:00</published><updated>2016-11-14T12:00:00+08:00</updated><author><name>楊永慶</name></author><id>tag:,2016-11-14:./w10-brython-hui-tu-fan-li.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
+&lt;/pre&gt;</summary><category term="Brython"></category></entry><entry><title>W12</title><link href="./w12.html" rel="alternate"></link><published>2016-11-28T12:00:00+08:00</published><updated>2016-11-28T12:00:00+08:00</updated><author><name>40523143</name></author><id>tag:,2016-11-28:./w12.html</id><summary type="html">&lt;p&gt;畫線練習&lt;/p&gt;
+
+
+&lt;p&gt;畫線練習&lt;/p&gt;
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
+
+&lt;canvas id="chord1" width="600" height="1000"&gt;&lt;/canvas&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import math
+# 準備繪圖畫布
+canvas = doc["chord1"]
+ctx = canvas.getContext("2d")
+
+'''
+# 改用 background 函式繪圖
+# 水平線
+for i in range(5):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    if i == 0:
+        ctx.lineWidth = 7
+    else:
+        ctx.lineWidth = 1
+    ctx.moveTo(99, 100+i*30)
+    ctx.lineTo(201, 100+i*30)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 垂直線
+for i in range(6):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    ctx.lineWidth = 1
+    ctx.moveTo(100+i*20, 100)
+    ctx.lineTo(100+i*20, 220)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+'''
+def canvasText(x, y, fontSize, string, sup, sub, color, ctx):
+    # 標定各弦音符號, 以及把位編號
+    ctx.beginPath()
+    ctx.fillStyle = color
+    ctx.strokeStyle = color
+    #ctx.font = "20px Arial"
+    ctx.font = str(fontSize)+ "px Arial"
+    ctx.fillText(string, x, y)
+    ctx.font = str(fontSize-8)+ "px Arial"
+    if sup != "":
+        ctx.fillText(sup, x+fontSize/1.6, y-fontSize/2)
+    if sub != "":
+        ctx.fillText(sup, x+fontSize/1.6, y)
+    ctx.fill()
+    ctx.stroke()
+    ctx.closePath()
+
+# 設法利用運算印出吉他各把位的音名
+def doreme(x, y, fontSize, order, ctx):
+    # EADGBE (guitar string)
+    # FgGaAbBCdDeE (C=Do, D=Re, E=Mi)
+    #簡譜 1 2 3 4 5 6 7 
+    #音名 C D E F G A B 
+    #唱名 Do Re Mi Fa Sol La Ti 
+
+    # 讓音名數列可以每 12 音名後, 升高 key 後從頭開始
+    if order &gt; 12:
+        order = order % 12
+
+    if order == 1:
+        canvasText(x, y, fontSize, "A", "", "", "black", ctx)
+    elif order ==2:
+        canvasText(x, y, fontSize, "B", "b", "", "red", ctx)
+    elif order == 3:
+        canvasText(x, y, fontSize, "B", "", "", "black", ctx)
+    elif order == 4:
+        canvasText(x, y, fontSize, "C", "", "", "black", ctx)
+    elif order == 5:
+        canvasText(x, y, fontSize, "D", "b", "", "red", ctx)
+    elif order == 6:
+        canvasText(x, y, fontSize, "D", "", "", "black", ctx)
+    elif order == 7:
+        canvasText(x, y, fontSize, "E", "b", "", "red", ctx)
+    elif order == 8:
+        canvasText(x, y, fontSize, "E", "", "", "black", ctx)
+    elif order == 9:
+        canvasText(x, y, fontSize, "F", "", "", "black", ctx)
+    elif order == 10:
+        canvasText(x, y, fontSize, "G", "b", "", "red", ctx)
+    elif order == 11:
+        canvasText(x, y, fontSize, "G", "", "", "black", ctx)
+    elif order == 12:
+        canvasText(x, y, fontSize, "A", "b", "", "red", ctx)
+    else:
+        canvasText(x, y, fontSize, "A", "b", "", "red", ctx)
+
+def background(x, y, xinc, yinc, xnum, ynum, ctx):
+    # 水平線
+    for i in range(ynum+1):
+        ctx.beginPath()
+    # 設定線的寬度為 1 個單位
+        if i == 0:
+            ctx.lineWidth = 7
+        else:
+            ctx.lineWidth = 1
+        ctx.moveTo(x-1, y+i*yinc)
+        ctx.lineTo(x+xnum*xinc+1, y+i*yinc)
+        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+        ctx.strokeStyle = "blue"
+        ctx.stroke()
+        ctx.closePath()
+
+    # 垂直線
+    for i in range(xnum+1):
+        ctx.beginPath()
+    # 設定線的寬度為 1 個單位
+        ctx.lineWidth = 1
+        ctx.moveTo(x+i*xinc, y)
+        ctx.lineTo(x+i*xinc, y+ynum*yinc)
+        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+        ctx.strokeStyle = "blue"
+        ctx.stroke()
+        ctx.closePath()
+    # 標定各弦音符號, 以及把位編號
+    ctx.beginPath()
+    ctx.fillStyle = 'black'
+    ctx.strokeStyle = "black"
+    ctx.font = "20px Arial"
+    sixString = ["E", "A", "D", "G", "B", "E"]
+    stringNum = 0
+    for i in sixString:
+        ctx.fillText(i, x-7+stringNum*xinc, y-10)
+        stringNum = stringNum + 1
+    num = 1
+    for j in range(1,20,1):
+        ctx.fillText(j,50,95+num*yinc)
+        num = num + 1
+
+    ctx.fill()
+    ctx.stroke()
+    ctx.closePath()
+    # EADGBE (guitar string)
+    # FgGaAbBCdDeE (C=Do, D=Re, E=Mi)
+
+    ####################################
+    # 以下利用數列運算, 從已知第1把位的音名分別推算各把位的音名
+    # 吉他初始音名次序 816(11)38
+    ####################################
+    firstBar = [8, 1, 6, 11, 3, 8]
+    # j 為往下增量
+    for j in range(19):
+        # k 為 往右把位初始值
+        fontSize = 15 
+        for k in range(6):
+            bx = x + (k)*w - fontSize/3
+            by = y + (j)*h+h/2 + fontSize/2
+            order = firstBar[k] + j + 1
+            doreme(bx, by, fontSize, order, ctx)
+
+
+
+# 一開始 x, y 為圓球圓心, 但是為了配合和弦繪圖
+# 將 x, y 改為和弦的左上角座標 x, y
+# 配合 w, h, wcoord, hcoord 進行運算得到圓的圓心座標 bx, by
+#def ball(x, y, w, h , wcoord, hcoord, r, color, ctx):
+def ball(x, y, w, h , wcoord, hcoord, color, ctx):
+    bx = x + (wcoord-1)*w
+    by = y + (hcoord-1)*h+h/2
+    if w &lt; h:
+        r2 = w/2 -2
+    else:
+        r2 = h/2 -2
+    ctx.beginPath()
+    #ctx.fillStyle = 'black'
+    ctx.fillStyle = color
+    #ctx.strokeStyle = "black"
+    ctx.strokeStyle = color
+    #ctx.arc(50, 80, 9, 0, 2*math.pi, False)
+    ctx.arc(bx, by, r2, 0, 2*math.pi, False)
+    # 為了疊上各把位的音名, 暫時不填色
+    #ctx.fill()
+    ctx.stroke()
+    ctx.closePath()
+
+x = 300
+y = 200
+w = 20
+h = 30
+# 將前面的水平線與垂直線繪圖改用 background 繪圖
+background(100, 100, w, h, 5, 19, ctx)
+#background(x, y, w, h, 5, 4, ctx)
+#background(100, 300, 10, 10, 5, 4, ctx)
+#background(300, 100, 10, 10, 5, 12, ctx)
+# 配合  300, 300 的和絃背景, w=30, h=30, (1,1) 位置放入圓
+#for i in range( 6):
+   # for j in range(3):
+      #  ball(x, y, w, h, i+1, j+1, 'black', ctx)
+#ball(x, y, w, h, 1, 4, 'red', ctx)
+#ball(300, 300, 30, 20, 1, 1, 9, 'black', ctx)
+&lt;/script&gt;</summary><category term="使用導引"></category></entry><entry><title>W11</title><link href="./w11.html" rel="alternate"></link><published>2016-11-27T12:00:00+08:00</published><updated>2016-11-27T12:00:00+08:00</updated><author><name>40523143</name></author><id>tag:,2016-11-27:./w11.html</id><summary type="html">&lt;p&gt;畫線練習&lt;/p&gt;
+
+
+&lt;p&gt;畫線練習&lt;/p&gt;
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
+
+&lt;canvas id="chord1" width="600" height="450"&gt;&lt;/canvas&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import math
+# 準備繪圖畫布
+canvas = doc["chord1"]
+ctx = canvas.getContext("2d")
+
+def background(x, y, xinc, yinc, xnum, ynum, ctx):
+    # 水平
+    for i in range(ynum+1):
+        ctx.beginPath()
+        if i == 0:
+            ctx.lineWidth = 7
+        else:
+            ctx.lineWidth = 1
+        ctx.moveTo(x-1, y+i*yinc)
+        ctx.lineTo(x+xnum*xinc+1, y+i*yinc)
+        ctx.strokeStyle = "blue"
+        ctx.stroke()
+        ctx.closePath()
+    # 垂直
+    for i in range(xnum+1):
+        ctx.beginPath()
+        ctx.lineWidth = 1
+        ctx.moveTo(x+i*xinc, y)
+        ctx.lineTo(x+i*xinc, y+ynum*yinc)
+        ctx.strokeStyle = "blue"
+        ctx.stroke()
+        ctx.closePath()
+
+background(50, 100, 20, 25, 5, 4, ctx)
+# 1 與 AMajor
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "30px Arial"
+ctx.fillText("AMajor", 50, 70)
+
+
+# 1
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(90, 138, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 85, 143)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(110, 138, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 105, 143)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(130, 138, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("3", 125, 143)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(70, 90, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.arc(150, 90, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+# x
+ctx.beginPath()
+#ctx.arc(50, 90, 5, 0, 2*math.pi, False)
+ctx.moveTo(45, 85)
+ctx.lineTo(55, 95)
+ctx.moveTo(55, 85)
+ctx.lineTo(45, 95)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+
+
+background(250, 100, 20, 25, 5, 4, ctx)
+
+# 1 與 AMajor
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "30px Arial"
+ctx.fillText("CMajor", 250, 70)
+
+
+# 1
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(330, 113, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 325, 118)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(290, 138, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 285, 143)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(270, 162, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("3", 265, 167)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(310, 90, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.arc(350, 90, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+# x
+ctx.beginPath()
+#ctx.arc(250, 90, 5, 0, 2*math.pi, False)
+ctx.moveTo(245, 85)
+ctx.lineTo(255, 95)
+ctx.moveTo(255, 85)
+ctx.lineTo(245, 95)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+
+background(450, 100, 20, 25, 5, 4, ctx)
+
+# 1 與 AMajor
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "30px Arial"
+ctx.fillText("GMajor", 450, 70)
+
+# 1
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(470, 138, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 465, 143)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(450, 162, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 445, 167)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(530, 162, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("3", 525, 167)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 4
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(550, 162, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("4", 545, 167)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(490, 90, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.arc(510, 90, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+
+
+
+background(50, 300, 20, 25, 5, 4, ctx)
+
+# 1 與 AMajor
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "30px Arial"
+ctx.fillText("DMajor", 50, 270)
+
+
+# 1
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(110, 338, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 105, 343)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(130, 362, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 125, 367)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(150, 338, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("3", 145, 343)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(90, 290, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+#ctx.arc(150, 390, 5, 0, 2*math.pi, False)
+#ctx.lineWidth =3
+#ctx.strokeStyle = "black"
+#ctx.stroke()
+#ctx.closePath()
+
+# x
+ctx.beginPath()
+#ctx.arc(50, 390, 5, 0, 2*math.pi, False)
+ctx.moveTo(45, 285)
+ctx.lineTo(55, 295)
+ctx.moveTo(55, 285)
+ctx.lineTo(45, 295)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+# x
+ctx.beginPath()
+#ctx.arc(50, 90, 5, 0, 2*math.pi, False)
+ctx.moveTo(65, 285)
+ctx.lineTo(75, 295)
+ctx.moveTo(75, 285)
+ctx.lineTo(65, 295)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+
+background(250, 300, 20, 25, 5, 4, ctx)
+
+# 1 與 AMajor
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "30px Arial"
+ctx.fillText("EMajor", 250, 270)
+
+
+# 1
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(310, 313, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 305, 318)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(270, 338, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 265, 343)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(290, 338, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("3", 285, 343)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(330, 290, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+#ctx.arc(150, 390, 5, 0, 2*math.pi, False)
+#ctx.lineWidth =3
+#ctx.strokeStyle = "black"
+#ctx.stroke()
+#ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(350, 290, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+#ctx.arc(150, 390, 5, 0, 2*math.pi, False)
+#ctx.lineWidth =3
+#ctx.strokeStyle = "black"
+#ctx.stroke()
+#ctx.closePath()
+
+
+# x
+ctx.beginPath()
+#ctx.arc(50, 390, 5, 0, 2*math.pi, False)
+ctx.moveTo(245, 285)
+ctx.lineTo(255, 295)
+ctx.moveTo(255, 285)
+ctx.lineTo(245, 295)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+
+
+background(450, 300, 20, 25, 5, 4, ctx)
+
+# 1 與 AMajor
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "30px Arial"
+ctx.fillText("Cmaj7", 450, 270)
+
+
+# 1
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(490, 338, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 485, 343)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(470, 362, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 465, 367)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+
+
+# o
+ctx.beginPath()
+ctx.arc(510, 290, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+#ctx.arc(150, 390, 5, 0, 2*math.pi, False)
+#ctx.lineWidth =3
+#ctx.strokeStyle = "black"
+#ctx.stroke()
+#ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(530, 290, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.arc(550, 290, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+
+# x
+ctx.beginPath()
+#ctx.arc(50, 390, 5, 0, 2*math.pi, False)
+ctx.moveTo(445, 285)
+ctx.lineTo(455, 295)
+ctx.moveTo(455, 285)
+ctx.lineTo(445, 295)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+&lt;/script&gt;
+
+&lt;p&gt;上述:&lt;/p&gt;
+
+&lt;pre class="brush: python"&gt;
+
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
+&lt;canvas id="chord1" width="600" height="450"&gt;&lt;/canvas&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import math
+# 準備繪圖畫布
+canvas = doc["chord1"]
+ctx = canvas.getContext("2d")
+
+def background(x, y, xinc, yinc, xnum, ynum, ctx):
+    # 水平
+    for i in range(ynum+1):
+        ctx.beginPath()
+        if i == 0:
+            ctx.lineWidth = 7
+        else:
+            ctx.lineWidth = 1
+        ctx.moveTo(x-1, y+i*yinc)
+        ctx.lineTo(x+xnum*xinc+1, y+i*yinc)
+        ctx.strokeStyle = "blue"
+        ctx.stroke()
+        ctx.closePath()
+    # 垂直
+    for i in range(xnum+1):
+        ctx.beginPath()
+        ctx.lineWidth = 1
+        ctx.moveTo(x+i*xinc, y)
+        ctx.lineTo(x+i*xinc, y+ynum*yinc)
+        ctx.strokeStyle = "blue"
+        ctx.stroke()
+        ctx.closePath()
+
+background(50, 100, 20, 25, 5, 4, ctx)
+# 1 與 AMajor
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "30px Arial"
+ctx.fillText("AMajor", 50, 70)
+
+
+# 1
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(90, 138, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 85, 143)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(110, 138, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 105, 143)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(130, 138, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("3", 125, 143)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(70, 90, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.arc(150, 90, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+# x
+ctx.beginPath()
+#ctx.arc(50, 90, 5, 0, 2*math.pi, False)
+ctx.moveTo(45, 85)
+ctx.lineTo(55, 95)
+ctx.moveTo(55, 85)
+ctx.lineTo(45, 95)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+
+
+background(250, 100, 20, 25, 5, 4, ctx)
+
+# 1 與 AMajor
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "30px Arial"
+ctx.fillText("CMajor", 250, 70)
+
+
+# 1
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(330, 113, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 325, 118)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(290, 138, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 285, 143)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(270, 162, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("3", 265, 167)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(310, 90, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.arc(350, 90, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+# x
+ctx.beginPath()
+#ctx.arc(250, 90, 5, 0, 2*math.pi, False)
+ctx.moveTo(245, 85)
+ctx.lineTo(255, 95)
+ctx.moveTo(255, 85)
+ctx.lineTo(245, 95)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+
+background(450, 100, 20, 25, 5, 4, ctx)
+
+# 1 與 AMajor
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "30px Arial"
+ctx.fillText("GMajor", 450, 70)
+
+# 1
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(470, 138, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 465, 143)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(450, 162, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 445, 167)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(530, 162, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("3", 525, 167)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 4
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(550, 162, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("4", 545, 167)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(490, 90, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.arc(510, 90, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+
+
+
+background(50, 300, 20, 25, 5, 4, ctx)
+
+# 1 與 AMajor
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "30px Arial"
+ctx.fillText("DMajor", 50, 270)
+
+
+# 1
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(110, 338, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 105, 343)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(130, 362, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 125, 367)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(150, 338, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("3", 145, 343)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(90, 290, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+#ctx.arc(150, 390, 5, 0, 2*math.pi, False)
+#ctx.lineWidth =3
+#ctx.strokeStyle = "black"
+#ctx.stroke()
+#ctx.closePath()
+
+# x
+ctx.beginPath()
+#ctx.arc(50, 390, 5, 0, 2*math.pi, False)
+ctx.moveTo(45, 285)
+ctx.lineTo(55, 295)
+ctx.moveTo(55, 285)
+ctx.lineTo(45, 295)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+# x
+ctx.beginPath()
+#ctx.arc(50, 90, 5, 0, 2*math.pi, False)
+ctx.moveTo(65, 285)
+ctx.lineTo(75, 295)
+ctx.moveTo(75, 285)
+ctx.lineTo(65, 295)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+
+background(250, 300, 20, 25, 5, 4, ctx)
+
+# 1 與 AMajor
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "30px Arial"
+ctx.fillText("EMajor", 250, 270)
+
+
+# 1
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(310, 313, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 305, 318)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(270, 338, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 265, 343)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(290, 338, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("3", 285, 343)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(330, 290, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+#ctx.arc(150, 390, 5, 0, 2*math.pi, False)
+#ctx.lineWidth =3
+#ctx.strokeStyle = "black"
+#ctx.stroke()
+#ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(350, 290, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+#ctx.arc(150, 390, 5, 0, 2*math.pi, False)
+#ctx.lineWidth =3
+#ctx.strokeStyle = "black"
+#ctx.stroke()
+#ctx.closePath()
+
+
+# x
+ctx.beginPath()
+#ctx.arc(50, 390, 5, 0, 2*math.pi, False)
+ctx.moveTo(245, 285)
+ctx.lineTo(255, 295)
+ctx.moveTo(255, 285)
+ctx.lineTo(245, 295)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+
+
+background(450, 300, 20, 25, 5, 4, ctx)
+
+# 1 與 AMajor
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "30px Arial"
+ctx.fillText("Cmaj7", 450, 270)
+
+
+# 1
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(490, 338, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 485, 343)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(470, 362, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 465, 367)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+
+
+# o
+ctx.beginPath()
+ctx.arc(510, 290, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+#ctx.arc(150, 390, 5, 0, 2*math.pi, False)
+#ctx.lineWidth =3
+#ctx.strokeStyle = "black"
+#ctx.stroke()
+#ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(530, 290, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.arc(550, 290, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+
+# x
+ctx.beginPath()
+#ctx.arc(50, 390, 5, 0, 2*math.pi, False)
+ctx.moveTo(445, 285)
+ctx.lineTo(455, 295)
+ctx.moveTo(455, 285)
+ctx.lineTo(445, 295)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+&lt;/script&gt;
+
+&lt;/pre&gt;</summary><category term="使用導引"></category></entry><entry><title>W10</title><link href="./w10.html" rel="alternate"></link><published>2016-11-14T12:00:00+08:00</published><updated>2016-11-14T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-11-14:./w10.html</id><summary type="html">&lt;p&gt;畫線練習&lt;/p&gt;
+
+
+&lt;p&gt;畫線練習&lt;/p&gt;
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;!-- 以下實際利用  Brython 畫兩條直線 --&gt;
+
+&lt;canvas id="japanflag1" width="600" height="200"&gt;&lt;/canvas&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import math
+# 準備繪圖畫布
+canvas = doc["japanflag1"]
+ctx = canvas.getContext("2d")
+
+# 以下可以利用 ctx 物件進行畫圖
+# 先畫一條直線
+ctx.beginPath()
+# 設定線的寬度為 1 個單位
+ctx.lineWidth = 1
+# 將畫筆移動到 (100, 100) 座標點
+ctx.moveTo(100, 100)
+# 然後畫直線到 (150, 200) 座標點
+ctx.lineTo(150, 200)
+# 畫右上左下的斜線
+ctx.moveTo(150, 100)
+ctx.lineTo(100, 200)
+# 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+ctx.strokeStyle = "blue"
+# 實際執行畫線
+ctx.stroke()
+ctx.closePath()
+&lt;/script&gt;
+
+&lt;!-- 以下實際利用  Brython 畫上下垂直線 --&gt;
+
+&lt;canvas id="japanflag2" width="600" height="200"&gt;&lt;/canvas&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import math
+# 準備繪圖畫布
+canvas = doc["japanflag2"]
+ctx = canvas.getContext("2d")
+
+# 以下可以利用 ctx 物件進行畫圖
+# 先畫一條直線
+ctx.beginPath()
+# 設定線的寬度為 1 個單位
+ctx.lineWidth = 1
+
+for i in range(5):
+    ctx.moveTo(100+i*10, 100)
+    ctx.lineTo(100+i*10, 200)
+
+# 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+ctx.strokeStyle = "blue"
+# 實際執行畫線
+ctx.stroke()
+ctx.closePath()
+&lt;/script&gt;
+
+&lt;!-- 以下實際利用  Brython 畫方格線 --&gt;
+
+&lt;canvas id="japanflag3" width="600" height="300"&gt;&lt;/canvas&gt;
+
+&lt;div id="container3"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+import math
+import re
+# 準備繪圖畫布
+canvas = doc["japanflag3"]
+container = doc["container3"]
+ctx = canvas.getContext("2d")
+# 以下可以利用 ctx 物件進行畫圖
+
+# 水平線
+for i in range(5):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    if i == 0:
+        ctx.lineWidth = 7
+    else:
+        ctx.lineWidth = 1
+    ctx.moveTo(99, 100+i*30)
+    ctx.lineTo(201, 100+i*30)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 垂直線
+for i in range(6):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    ctx.lineWidth = 1
+    ctx.moveTo(100+i*20, 100)
+    ctx.lineTo(100+i*20, 220)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 1 與 AMajor
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "30px Arial"
+ctx.fillText("AMajor", 100, 70)
+
+
+# 1
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(140, 145, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 135, 150)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(160, 145, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 155, 150)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(180, 145, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("3", 175, 150)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(120, 80, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.arc(200, 80, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+# x
+ctx.beginPath()
+#ctx.arc(100, 80, 5, 0, 2*math.pi, False)
+ctx.moveTo(95, 75)
+ctx.lineTo(105, 85)
+ctx.moveTo(105, 75)
+ctx.lineTo(95, 85)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+&lt;/script&gt;
+
+&lt;p&gt;上述
+&lt;pre class="brush:python"&gt;&lt;/p&gt;
+&lt;!-- 以下實際利用  Brython 畫兩條直線 --&gt;
+
+&lt;canvas id="japanflag1" width="600" height="200"&gt;&lt;/canvas&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import math
+# 準備繪圖畫布
+canvas = doc["japanflag1"]
+ctx = canvas.getContext("2d")
+
+# 以下可以利用 ctx 物件進行畫圖
+# 先畫一條直線
+ctx.beginPath()
+# 設定線的寬度為 1 個單位
+ctx.lineWidth = 1
+# 將畫筆移動到 (100, 100) 座標點
+ctx.moveTo(100, 100)
+# 然後畫直線到 (150, 200) 座標點
+ctx.lineTo(150, 200)
+# 畫右上左下的斜線
+ctx.moveTo(150, 100)
+ctx.lineTo(100, 200)
+# 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+ctx.strokeStyle = "blue"
+# 實際執行畫線
+ctx.stroke()
+ctx.closePath()
+&lt;/script&gt;
+
+&lt;!-- 以下實際利用  Brython 畫上下垂直線 --&gt;
+
+&lt;canvas id="japanflag2" width="600" height="200"&gt;&lt;/canvas&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import math
+# 準備繪圖畫布
+canvas = doc["japanflag2"]
+ctx = canvas.getContext("2d")
+
+# 以下可以利用 ctx 物件進行畫圖
+# 先畫一條直線
+ctx.beginPath()
+# 設定線的寬度為 1 個單位
+ctx.lineWidth = 1
+
+for i in range(5):
+    ctx.moveTo(100+i*10, 100)
+    ctx.lineTo(100+i*10, 200)
+
+# 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+ctx.strokeStyle = "blue"
+# 實際執行畫線
+ctx.stroke()
+ctx.closePath()
+&lt;/script&gt;
+
+&lt;!-- 以下實際利用  Brython 畫方格線 --&gt;
+
+&lt;canvas id="japanflag3" width="600" height="300"&gt;&lt;/canvas&gt;
+
+&lt;div id="container3"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+import math
+import re
+# 準備繪圖畫布
+canvas = doc["japanflag3"]
+container = doc["container3"]
+ctx = canvas.getContext("2d")
+# 以下可以利用 ctx 物件進行畫圖
+
+# 水平線
+for i in range(5):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    if i == 0:
+        ctx.lineWidth = 7
+    else:
+        ctx.lineWidth = 1
+    ctx.moveTo(99, 100+i*30)
+    ctx.lineTo(201, 100+i*30)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 垂直線
+for i in range(6):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    ctx.lineWidth = 1
+    ctx.moveTo(100+i*20, 100)
+    ctx.lineTo(100+i*20, 220)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 1 與 AMajor
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "30px Arial"
+ctx.fillText("AMajor", 100, 70)
+
+
+# 1
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(140, 145, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 135, 150)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(160, 145, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 155, 150)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(180, 145, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("3", 175, 150)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(120, 80, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.arc(200, 80, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+# x
+ctx.beginPath()
+#ctx.arc(100, 80, 5, 0, 2*math.pi, False)
+ctx.moveTo(95, 75)
+ctx.lineTo(105, 85)
+ctx.moveTo(105, 75)
+ctx.lineTo(95, 85)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+
+
+
+
+
+
+&lt;/script&gt;</summary><category term="使用導引"></category></entry><entry><title>W10 Brython 繪圖範例</title><link href="./w10-brython-hui-tu-fan-li.html" rel="alternate"></link><published>2016-11-14T12:00:00+08:00</published><updated>2016-11-14T12:00:00+08:00</updated><author><name>楊永慶</name></author><id>tag:,2016-11-14:./w10-brython-hui-tu-fan-li.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
 
 
 &lt;p&gt;繪圖流程, 導入程式庫, 啟動, 然後引用各種模組開始繪圖&lt;/p&gt;
