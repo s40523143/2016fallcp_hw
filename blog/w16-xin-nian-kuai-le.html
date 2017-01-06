@@ -168,7 +168,7 @@ init_mathjax();
 
 <link rel="canonical" href="./w16-xin-nian-kuai-le.html">
 
-        <meta name="author" content="40523143" />
+        <meta name="author" content="40523137" />
         <meta name="keywords" content="Brython" />
         <meta name="description" content="2017年元旦快樂" />
 
@@ -180,7 +180,7 @@ init_mathjax();
         <meta property="article:published_time" content="2016-12-30" />
             <meta property="article:section" content="Course" />
             <meta property="article:tag" content="Brython" />
-            <meta property="article:author" content="40523143" />
+            <meta property="article:author" content="40523137" />
 
 
     <!-- Bootstrap -->
@@ -306,7 +306,7 @@ init_mathjax();
         <i class="fa fa-calendar"></i><time datetime="2016-12-30T12:00:00+08:00"> 週五 30 十二月 2016</time>
     </span>
             <span class="label label-default">By</span>
-            <a href="./author/40523143.html"><i class="fa fa-user"></i> 40523143</a>
+            <a href="./author/40523137.html"><i class="fa fa-user"></i> 40523137</a>
 
 
 
@@ -352,7 +352,7 @@ def gen_int():
 def lottery(e):
     for i in range(6):
         gen_int()
-    print_location <= "恭喜中獎?" + html.BR()
+    print_location <= "~" + html.BR()
 
 #document["but1"].bind("click", gen_int)
 document["but1"].bind("click", lottery)
@@ -369,35 +369,98 @@ def lottery(e):
     num_list = random.sample(list(range(1, 50)), 6)
     for i in range(6):
         print_location <= num_list[i] + html.BR()
-    print_location <= "(不會重複)恭喜中獎!" + html.BR()
+    print_location <= "恭喜中獎!" + html.BR()
 
 document["but2"].bind("click", lottery)
 </script>
 
-<p><button id="but2">恭喜發財</button>
+<p><button id="but2">恭喜發財</button></p>
+<p>猜數字</p>
 <div id="id3"></div>
-</script type="text/python3">&lt;
+
+<script type="text/python3">
 from browser import document
 from browser import html
-import random</p>
-<p>id3 = document["id3"]</p>
-<h1>coding: utf-8</h1>
-<h1>猜數字遊戲</h1>
-<p>import random
-標準答案 = random.randint(1, 100)
-你猜的數字 = int(input("請輸入您所猜的整數:"))
-猜測次數 = 1
-while 標準答案 != 你猜的數字:
-    if 標準答案 &lt; 你猜的數字:
-        #print("太大了，再猜一次 :)加油" 
-        id3&lt;="太大了，再猜一次 :)加油" + html.BR()
-    else:
-       # print("太小了，再猜一次 :)加油")
-        id3&lt;="太小了，再猜一次 :)加油"+ html.BR()
-    你猜的數字 = int(input("請輸入您所猜的整數:"))
-    猜測次數 += 1</p>
-<h1>print("猜對了！總共猜了", 猜測次數, "次")</h1>
-<p>id3&lt;="猜對了！總共猜了", 猜測次數, "次"</p>
+import random
+
+id3 = document["id3"]
+def guess(ev):
+    # 清除 id3 中的內容
+    id3.clear()
+    id3 <= "開始玩猜數字遊戲" + html.BR()
+    標準答案 = random.randint(1, 100)
+    你猜的數字 = int(input("請輸入您所猜 1~100 間的整數:"))
+    猜測次數 = 1
+    while 標準答案 != 你猜的數字:
+        if 標準答案 < 你猜的數字:
+            #print("太大了，再猜一次 :)加油")
+            # 清除 id3 中的內容
+            id3.clear()
+            id3 <= "太大了，再猜一次 :)加油" + html.BR()
+        else:
+            #print("太小了，再猜一次 :)加油")
+            # 清除 id3 中的內容
+            id3.clear()
+            id3 <= "太小了，再猜一次 :)加油" + html.BR()
+        你猜的數字 = int(input("請輸入您所猜 1~100 間的整數:"))
+        猜測次數 += 1
+
+    #print("猜對了！總共猜了", 猜測次數, "次")
+    id3 <= "猜對了！答案為" + str(標準答案) + ", 總共猜了" + str(猜測次數) + "次"
+
+document["but3"].bind("click", guess)
+</script>
+
+<p><button id="but3">玩猜數字遊戲</button></p>
+<div id="id4"></div>
+
+<script type="text/python3">
+from browser import document
+from browser import html
+import random
+
+id4 = document["id4"]
+def autoguess(ev):
+    執行次數 = 100
+    總猜測次數 = 0
+    for i in range(執行次數):
+        id4 <= "第" + str(i+1) + "次玩:" + html.BR()
+        下限 = 1
+        上限 = 100
+        標準答案 = random.randint(下限, 上限)
+        pc猜的數字 = random.randint(下限, 上限)
+        #print(標準答案, pc猜的數字)
+        #integer int()
+        #string str()
+        #float float()
+        #你猜的數字 = int(input("請輸入您所猜的整數:"))
+        猜測次數 = 1
+        while 標準答案 != pc猜的數字:
+            if 標準答案 < pc猜的數字:
+                #print("太大了，再猜一次 :)加油")
+                # 因此已經確定"pc猜的數字"不是答案, 因此 - 1
+                id4 <= "電腦猜的數字:" + str(pc猜的數字) + " 太大了!" + html.BR()
+                上限 = pc猜的數字 - 1
+            else:
+                #print("太小了，再猜一次 :)加油")
+                # 因此已經確定"pc猜的數字"不是答案, 因此 + 1
+                id4 <= "電腦猜的數字:" + str(pc猜的數字) + " 太小了!" + html.BR()
+                下限 = pc猜的數字 + 1
+            #pc猜的數字 = int(input("請輸入您所猜的整數:"))
+            pc猜的數字 = random.randint(下限, 上限)
+            猜測次數 += 1
+
+        #print("猜對了！總共猜了", 猜測次數, "次")
+        id4 <= "電腦猜對了, 答案為: " + str(標準答案) + ", 總共猜了 "+ str(猜測次數) + "次" + html.BR()
+        總猜測次數 += 猜測次數
+    平均猜測次數 = int(總猜測次數/執行次數)
+    #print("平均次數", 平均猜測次數)
+    id4 <= "平均次數: " + str(平均猜測次數)
+
+document["but4"].bind("click", autoguess)
+</script>
+
+<p><button id="but4">利用程式玩猜數字</button></p>
             </div>
             <!-- /.entry-content -->
         </article>
@@ -423,13 +486,13 @@ while 標準答案 != 你猜的數字:
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="./cp-w15-lian-xi.html">
-                            CP W15 練習
+                        <a href="./cai-shu-zi-you-xi.html">
+                            猜數字遊戲
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="./w14-lian-xi.html">
-                            W14 練習
+                        <a href="./cp-w15-lian-xi.html">
+                            CP W15 練習
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -493,7 +556,7 @@ while 標準答案 != 你猜的數字:
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2017 40523143
+         <div class="col-xs-10">&copy; 2017 40523137
             &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
