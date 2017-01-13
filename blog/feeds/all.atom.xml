@@ -82,7 +82,7 @@ def animate():
     theta += 1
 
 timer.set_interval(animate, 50)
-&lt;/script&gt;</summary><category term="Brython"></category></entry><entry><title>W16 新年快樂</title><link href="./w16-xin-nian-kuai-le.html" rel="alternate"></link><published>2016-12-30T12:00:00+08:00</published><updated>2016-12-30T12:00:00+08:00</updated><author><name>40523137</name></author><id>tag:,2016-12-30:./w16-xin-nian-kuai-le.html</id><summary type="html">&lt;p&gt;2017年元旦快樂&lt;/p&gt;
+&lt;/script&gt;</summary><category term="Brython"></category></entry><entry><title>W16 新年快樂</title><link href="./w16-xin-nian-kuai-le.html" rel="alternate"></link><published>2016-12-30T12:00:00+08:00</published><updated>2016-12-30T12:00:00+08:00</updated><author><name>40523143</name></author><id>tag:,2016-12-30:./w16-xin-nian-kuai-le.html</id><summary type="html">&lt;p&gt;2017年元旦快樂&lt;/p&gt;
 
 
 &lt;p&gt;首先了解random亂數模組的用法&lt;/p&gt;
@@ -302,7 +302,7 @@ con2 &lt;= print1("猜對了！總共猜了", 猜測次數, "次")
 
 &lt;/script&gt;
 
-&lt;p&gt;&lt;button id ="b1"&gt;玩猜數字遊戲&lt;/button&gt;&lt;/p&gt;</summary><category term="每週練習"></category></entry><entry><title>CP W15 練習</title><link href="./cp-w15-lian-xi.html" rel="alternate"></link><published>2016-12-23T12:00:00+08:00</published><updated>2016-12-23T12:00:00+08:00</updated><author><name>40523137</name></author><id>tag:,2016-12-23:./cp-w15-lian-xi.html</id><summary type="html">&lt;!-- 導入 Brython 標準程式庫 --&gt;
+&lt;p&gt;&lt;button id ="b1"&gt;玩猜數字遊戲&lt;/button&gt;&lt;/p&gt;</summary><category term="每週練習"></category></entry><entry><title>CP W15 練習</title><link href="./cp-w15-lian-xi.html" rel="alternate"></link><published>2016-12-23T12:00:00+08:00</published><updated>2016-12-23T12:00:00+08:00</updated><author><name>40523143</name></author><id>tag:,2016-12-23:./cp-w15-lian-xi.html</id><summary type="html">&lt;!-- 導入 Brython 標準程式庫 --&gt;
 
 &lt;script type="text/javascript" 
     src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
@@ -1320,7 +1320,7 @@ mynum = input("要印幾次?")
 for i in range(int(mynum)):
     #container&lt;="W14練習-2"+html.BR()
     container&lt;=mystring+html.BR()
-&lt;/script&gt;</summary><category term="每週練習"></category></entry><entry><title>W13 練習-2</title><link href="./w13-lian-xi-2.html" rel="alternate"></link><published>2016-12-10T12:00:00+08:00</published><updated>2016-12-10T12:00:00+08:00</updated><author><name>楊永慶</name></author><id>tag:,2016-12-10:./w13-lian-xi-2.html</id><summary type="html">&lt;p&gt;將&lt;a herf="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;
+&lt;/script&gt;</summary><category term="每週練習"></category></entry><entry><title>W13 練習-2</title><link href="./w13-lian-xi-2.html" rel="alternate"></link><published>2016-12-10T12:00:00+08:00</published><updated>2016-12-10T12:00:00+08:00</updated><author><name>40523143</name></author><id>tag:,2016-12-10:./w13-lian-xi-2.html</id><summary type="html">&lt;p&gt;將&lt;a herf="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;
 http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 整理成brython
 練習:編寫一個可以將適用者輸入的攝氏溫度,轉為華氏溫度&lt;/p&gt;
 
@@ -1389,7 +1389,7 @@ container &lt;= mystring
 
 &lt;script type="text/python3"&gt;
 from browser import document as doc
-&lt;/script&gt;</summary><category term="使用導引"></category></entry><entry><title>W13 練習-1</title><link href="./w13-lian-xi-1.html" rel="alternate"></link><published>2016-12-09T12:00:00+08:00</published><updated>2016-12-09T12:00:00+08:00</updated><author><name>楊永慶</name></author><id>tag:,2016-12-09:./w13-lian-xi-1.html</id><summary type="html">&lt;p&gt;將&lt;a herf="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;
+&lt;/script&gt;</summary><category term="使用導引"></category></entry><entry><title>W13 練習-1</title><link href="./w13-lian-xi-1.html" rel="alternate"></link><published>2016-12-09T12:00:00+08:00</published><updated>2016-12-09T12:00:00+08:00</updated><author><name>40523143</name></author><id>tag:,2016-12-09:./w13-lian-xi-1.html</id><summary type="html">&lt;p&gt;將&lt;a herf="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;
 http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 整理成brython&lt;/p&gt;
 
 
@@ -3038,7 +3038,7 @@ doc['ex4'].bind('click',ex4)
 &lt;script type="text/python3"&gt;
 from browser import document
 from browser import alert
-&lt;/script&gt;&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>W12 Brython 繪圖範例</title><link href="./w12-brython-hui-tu-fan-li.html" rel="alternate"></link><published>2016-12-02T00:00:00+08:00</published><updated>2016-12-02T00:00:00+08:00</updated><author><name>楊永慶</name></author><id>tag:,2016-12-02:./w12-brython-hui-tu-fan-li.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
+&lt;/script&gt;&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>W12 Brython 繪圖範例</title><link href="./w12-brython-hui-tu-fan-li.html" rel="alternate"></link><published>2016-12-02T00:00:00+08:00</published><updated>2016-12-02T00:00:00+08:00</updated><author><name>40523143</name></author><id>tag:,2016-12-02:./w12-brython-hui-tu-fan-li.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
 
 
 &lt;p&gt;繪圖流程, 導入程式庫, 啟動, 然後引用各種模組開始繪圖&lt;/p&gt;
@@ -5041,7 +5041,7 @@ ctx.closePath()
 
 
 
-&lt;/script&gt;</summary><category term="使用導引"></category></entry><entry><title>W10 Brython 繪圖範例</title><link href="./w10-brython-hui-tu-fan-li.html" rel="alternate"></link><published>2016-11-14T12:00:00+08:00</published><updated>2016-11-14T12:00:00+08:00</updated><author><name>楊永慶</name></author><id>tag:,2016-11-14:./w10-brython-hui-tu-fan-li.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
+&lt;/script&gt;</summary><category term="使用導引"></category></entry><entry><title>W10 Brython 繪圖範例</title><link href="./w10-brython-hui-tu-fan-li.html" rel="alternate"></link><published>2016-11-14T12:00:00+08:00</published><updated>2016-11-14T12:00:00+08:00</updated><author><name>40523143</name></author><id>tag:,2016-11-14:./w10-brython-hui-tu-fan-li.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
 
 
 &lt;p&gt;繪圖流程, 導入程式庫, 啟動, 然後引用各種模組開始繪圖&lt;/p&gt;
